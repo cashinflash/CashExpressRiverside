@@ -4697,3 +4697,52 @@ button.btn-apply:hover, button.btn-apply:focus {
 @media (max-width: 700px) {
   .testimonials { padding-top: 120px !important; margin-top: 20px !important; }
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v15 — fix the pre-footer button-blends-into-background bug
+   ═════════════════════════════════════════════════════════════════════ */
+/* Kill the two huge yellow blob pseudo-elements that were making the
+   pre-footer look yellow-washed (which in turn made the yellow button
+   visually dissolve into the section). */
+.pre-footer::before, .pre-footer::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+}
+
+/* Lock the pre-footer to a solid, unambiguous navy gradient */
+section.pre-footer {
+  background: linear-gradient(135deg, #003DA5 0%, #0A2560 100%) !important;
+  color: #FFFFFF !important;
+  overflow: hidden !important;
+  position: relative;
+  padding: 110px 0 !important;
+}
+section.pre-footer h2 { color: #FFFFFF !important; }
+
+/* Apply button: yellow fill, navy text, WHITE RING for unmistakable edge */
+section.pre-footer a.btn-apply,
+section.pre-footer a.btn-apply.btn-lg {
+  background: #FFC52B !important;
+  background-image: none !important;
+  color: #14377C !important;
+  border: 3px solid #FFFFFF !important;
+  box-shadow:
+    0 0 0 4px rgba(255,197,43,.35),
+    0 18px 44px rgba(0,0,0,.30) !important;
+  padding: 18px 44px !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  letter-spacing: .01em;
+  border-radius: 999px !important;
+}
+section.pre-footer a.btn-apply:hover,
+section.pre-footer a.btn-apply.btn-lg:hover {
+  background: #FFFFFF !important;
+  color: #003DA5 !important;
+  border-color: #FFFFFF !important;
+  box-shadow:
+    0 0 0 4px rgba(255,255,255,.35),
+    0 22px 52px rgba(0,0,0,.35) !important;
+  transform: translateY(-3px);
+}
