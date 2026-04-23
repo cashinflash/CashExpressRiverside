@@ -4691,3 +4691,9 @@ button.btn-apply:hover, button.btn-apply:focus {
   .mobile-menu-logo img, .mobile-menu-header img { height: 48px !important; max-height: 48px !important; }
   .footer-bottom-left img, .pre-footer img { height: 56px !important; max-height: 56px !important; }
 }
+
+/* Extra breathing room above testimonials title (user-requested) */
+.testimonials { padding-top: 180px !important; margin-top: 40px !important; }
+@media (max-width: 700px) {
+  .testimonials { padding-top: 120px !important; margin-top: 20px !important; }
+}
