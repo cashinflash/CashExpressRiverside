@@ -3945,3 +3945,197 @@ body {
   .page-hero { padding: 72px 0 80px !important; }
   .features.features-navy { padding: 84px 0 !important; }
 }
+
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v9 — clean alternating sections + free-flowing global blobs
+   Wave dividers removed. Page-level blobs span section boundaries.
+   Rhythm: section 1 white, section 2 warm-cream, repeating.
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* Allow body-level blobs to overflow without clipping across sections */
+html, body { overflow-x: hidden; }
+body { position: relative; }
+main { position: relative; z-index: 0; }
+
+/* ── Kill every prior section-scoped blob decoration so v9 blobs are the
+     sole decorative layer ── */
+.page-hero::before, .page-hero::after,
+.page-hero .hero-grid::before, .page-hero .hero-grid::after,
+.features::before, .features::after,
+.use-cases::before, .use-cases::after,
+.service-area::before, .service-area::after,
+.faq::before, .faq::after,
+.pre-footer::before, .pre-footer::after,
+.testimonials::before {
+  display: none !important;
+  content: none !important;
+}
+/* Undo overflow:hidden on sections so nothing clips the global blobs */
+.page-hero, .features, .use-cases, .testimonials, .how-it-works,
+.requirements, .service-area, .faq {
+  overflow: visible !important;
+}
+/* Pre-footer stays clipped — it has its own contained glow/curve */
+.pre-footer { overflow: hidden !important; }
+
+/* Ensure content sits above the blobs */
+.page-hero > *, .features > *, .use-cases > *, .testimonials > *,
+.how-it-works > *, .requirements > *, .service-area > *, .faq > *,
+.pre-footer > *, .big-stats > *, .trust-strip > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Undo navy features block; back to clean surface with no override tint */
+.features.features-navy { background: none !important; color: inherit !important; padding: 0 !important; }
+.features.features-navy .section-heading { color: #0F2744 !important; }
+.features.features-navy .features-content p { color: #4B5563 !important; font-size: 1rem !important; }
+.features.features-navy .feature-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E6EAF0 !important;
+  backdrop-filter: none;
+  border-left: 4px solid #FFC52B !important;
+}
+.features.features-navy .feature-card h3 { color: #0F2744 !important; }
+.features.features-navy .feature-card p  { color: #4B5563 !important; }
+.features.features-navy .features-image-v2 svg circle[fill="rgba(255,197,43,.10)"] { fill: #FFF8E1 !important; }
+.features.features-navy .features-image-v2 svg circle[fill="rgba(255,197,43,.18)"] { fill: #F5E1AC !important; }
+
+/* ══════════════ CLEAN ALTERNATING SECTION SURFACES ══════════════
+   Rhythm (top → bottom):
+     hero            white
+     trust-strip     white
+     big-stats       white
+     features        cream       ← 1
+     use-cases       white
+     testimonials    cream       ← 2
+     how-it-works    white
+     requirements    cream       ← 3
+     service-area    white
+     faq             cream       ← 4
+     pre-footer      navy (its own brand CTA block)
+*/
+:root { --cer-cream: #FFFAE8; }
+
+.page-hero, .trust-strip, .big-stats,
+.use-cases, .how-it-works, .service-area {
+  background: #FFFFFF !important;
+}
+.features, .testimonials, .requirements, .faq {
+  background: var(--cer-cream) !important;
+}
+
+/* Keep the pre-footer navy gradient — it's the closing CTA block */
+.pre-footer {
+  background: linear-gradient(135deg, #003DA5 0%, #0A2560 100%) !important;
+}
+
+/* ══════════════ FLOWING GLOBAL BLOBS ══════════════
+   Large organic shapes positioned absolutely on <main>, so they cross
+   section boundaries and create a continuous visual layer behind content.
+   Each blob uses asymmetric border-radius for a unique silhouette.
+*/
+.global-blobs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;   /* clip to main — prevents horizontal scroll bar */
+}
+.gb {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(0.3px);   /* softens the edge ever so slightly */
+  will-change: transform;
+}
+
+/* Top-right yellow, behind hero + trust + stats (spans ~3 sections) */
+.gb-1 {
+  top: -120px; right: -260px;
+  width: 760px; height: 700px;
+  background: #FFC52B;
+  opacity: .20;
+  border-radius: 62% 38% 47% 53% / 55% 48% 52% 45%;
+  transform: rotate(-12deg);
+}
+
+/* Mid-left navy, behind features + use-cases transition */
+.gb-2 {
+  top: 720px; left: -320px;
+  width: 700px; height: 680px;
+  background: #003DA5;
+  opacity: .07;
+  border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%;
+  transform: rotate(16deg);
+}
+
+/* Mid-right yellow, behind testimonials */
+.gb-3 {
+  top: 1720px; right: -300px;
+  width: 720px; height: 660px;
+  background: #FFC52B;
+  opacity: .16;
+  border-radius: 48% 52% 60% 40% / 52% 48% 52% 48%;
+  transform: rotate(-18deg);
+}
+
+/* Mid-left yellow accent between how-it-works and requirements */
+.gb-4 {
+  top: 2700px; left: -280px;
+  width: 640px; height: 620px;
+  background: #FFC52B;
+  opacity: .14;
+  border-radius: 55% 45% 50% 50% / 50% 50% 50% 50%;
+  transform: rotate(22deg);
+}
+
+/* Right-side navy, behind service-area */
+.gb-5 {
+  top: 3650px; right: -280px;
+  width: 680px; height: 640px;
+  background: #003DA5;
+  opacity: .06;
+  border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+  transform: rotate(-10deg);
+}
+
+/* Left-side yellow, behind FAQ */
+.gb-6 {
+  top: 4600px; left: -300px;
+  width: 720px; height: 700px;
+  background: #FFC52B;
+  opacity: .18;
+  border-radius: 52% 48% 40% 60% / 48% 52% 48% 52%;
+  transform: rotate(14deg);
+}
+
+/* Small navy tuck above pre-footer */
+.gb-7 {
+  top: 5400px; right: -240px;
+  width: 520px; height: 500px;
+  background: #003DA5;
+  opacity: .08;
+  border-radius: 58% 42% 52% 48% / 50% 50% 50% 50%;
+  transform: rotate(-24deg);
+}
+
+/* Mobile: scale blobs way down so they don't dominate and still flow */
+@media (max-width: 800px) {
+  .gb-1 { width: 460px; height: 420px; right: -200px; top: -100px; opacity: .22; }
+  .gb-2 { width: 420px; height: 400px; left: -220px; top: 620px; }
+  .gb-3 { width: 440px; height: 400px; right: -200px; top: 1500px; }
+  .gb-4 { width: 360px; height: 360px; left: -180px; top: 2400px; }
+  .gb-5 { width: 400px; height: 380px; right: -180px; top: 3200px; }
+  .gb-6 { width: 440px; height: 420px; left: -200px; top: 4000px; }
+  .gb-7 { width: 320px; height: 300px; right: -160px; top: 4800px; }
+}
+@media (max-width: 500px) {
+  .gb-1 { width: 340px; height: 320px; right: -140px; opacity: .25; }
+  .gb-2 { width: 300px; height: 300px; left: -140px; top: 560px; }
+  .gb-3 { width: 320px; height: 300px; right: -140px; top: 1320px; }
+  .gb-4 { width: 280px; height: 280px; left: -120px; top: 2080px; }
+  .gb-5 { width: 300px; height: 280px; right: -120px; top: 2800px; }
+  .gb-6 { width: 320px; height: 320px; left: -140px; top: 3520px; }
+  .gb-7 { width: 240px; height: 220px; right: -100px; top: 4200px; }
+}
