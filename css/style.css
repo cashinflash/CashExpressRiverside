@@ -4376,3 +4376,138 @@ main { position: relative; z-index: 0; }
   .service-area, .faq { padding: 80px 0 !important; }
   .testimonials { margin-top: 24px; padding-top: 88px !important; }
 }
+
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v11 — bulletproof trust strip + visibility fixes
+   Replaces the previous .trust-grid / .trust-item rules with a clean
+   card-based grid that can't collapse badly at any width.
+   Also reinforces the pre-footer button styles against cascade overrides.
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* ── NEW TRUST STRIP (v2 markup) ── */
+.trust-strip-v2 {
+  background: #FFFFFF !important;
+  padding: 44px 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  position: relative;
+  z-index: 3;
+}
+.trust-strip-v2 .container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.ts-grid {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+}
+.ts-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 8px !important;
+  padding: 20px 16px !important;
+  background: #FFFFFF;
+  border: 1px solid #E6EAF0;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(15,23,42,.04);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.ts-item:hover {
+  transform: translateY(-2px);
+  border-color: #FFC52B;
+  box-shadow: 0 10px 24px rgba(0,61,165,.08);
+}
+.ts-icon {
+  width: 48px;
+  height: 48px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: #FFFAE8;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+.ts-icon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+.ts-title {
+  display: block !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  color: #14377C !important;
+  letter-spacing: .01em;
+  line-height: 1.2;
+}
+.ts-sub {
+  display: block !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  color: #64748b !important;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+/* Mobile — 2 cols, then 1 col at very narrow */
+@media (max-width: 900px) {
+  .ts-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .trust-strip-v2 { padding: 36px 0 !important; }
+}
+@media (max-width: 420px) {
+  .ts-grid { grid-template-columns: 1fr !important; }
+  .ts-item { flex-direction: row !important; text-align: left !important; gap: 14px !important; padding: 16px !important; }
+  .ts-icon { width: 44px; height: 44px; }
+}
+
+/* Dead old trust-strip v1 styling — zero it out so nothing leaks */
+.trust-strip:not(.trust-strip-v2) { display: none !important; }
+.trust-grid, .trust-item { display: none !important; }
+
+/* ── Reinforce testimonials breathing room ── */
+.testimonials {
+  margin-top: 60px !important;
+  padding-top: 140px !important;
+  padding-bottom: 140px !important;
+}
+@media (max-width: 700px) {
+  .testimonials { margin-top: 40px !important; padding-top: 96px !important; padding-bottom: 96px !important; }
+}
+
+/* ── Pre-footer Apply button: last-word styling (wins any cascade) ── */
+.pre-footer a.btn-apply,
+.pre-footer a.btn-apply.btn-lg {
+  background-color: #FFC52B !important;
+  background-image: none !important;
+  color: #14377C !important;
+  border: 2px solid #FFC52B !important;
+  box-shadow: 0 0 0 5px rgba(255,255,255,.15), 0 14px 36px rgba(255,197,43,.55) !important;
+  transition: background-color .15s ease, color .15s ease, box-shadow .15s ease, transform .12s ease !important;
+}
+.pre-footer a.btn-apply:hover,
+.pre-footer a.btn-apply.btn-lg:hover {
+  background-color: #FFFFFF !important;
+  color: #003DA5 !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 0 0 5px rgba(255,255,255,.28), 0 18px 44px rgba(255,255,255,.18) !important;
+  transform: translateY(-3px);
+}
+/* Nuke any stray green anywhere (cascade safeguard) */
+a.btn-apply:hover, a.btn-apply:focus, a.btn-apply:active,
+button.btn-apply:hover, button.btn-apply:focus {
+  background-color: #E0A800 !important;
+}
+.pre-footer a.btn-apply:hover { background-color: #FFFFFF !important; }
+
+/* ── Logo another small bump on the very narrow end so it's never hidden ── */
+@media (max-width: 500px) {
+  .site-header .logo img { height: 52px !important; max-width: 220px !important; }
+}
