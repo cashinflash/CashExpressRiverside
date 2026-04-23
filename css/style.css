@@ -2968,6 +2968,19 @@ table tr:nth-child(even) td { background: var(--cer-bg) !important; }
   box-shadow: 0 14px 36px rgba(255,197,43,.55), 0 0 0 4px rgba(255,255,255,.35) !important;
 }
 
+/* ── MOBILE MENU: navy (was dark green) ── */
+.mobile-menu {
+  background: linear-gradient(180deg, var(--cer-blue) 0%, var(--cer-blue-deep) 100%) !important;
+}
+.mobile-nav-item > a { color: #FFFFFF !important; border-bottom: 1px solid rgba(255,255,255,.14) !important; }
+.mobile-nav-item > a:hover,
+.mobile-nav-item > a[aria-current="page"] { color: var(--cer-yellow) !important; }
+.mobile-btn-row .btn-apply:hover {
+  background: var(--cer-yellow-dark) !important;
+  color: var(--cer-blue-deep) !important;
+  border-color: var(--cer-yellow-dark) !important;
+}
+
 /* ── FOOTER: navy ── */
 .site-footer {
   background: var(--cer-blue-deep) !important;
