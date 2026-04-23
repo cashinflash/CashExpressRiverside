@@ -1,30 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 88" width="360" height="88" role="img" aria-label="Cash Express Riverside">
   <title>Cash Express Riverside</title>
   <defs>
-    <linearGradient id="ce-gr" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#FFC52B"/>
-      <stop offset="100%" stop-color="#E0A800"/>
+    <linearGradient id="ce-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#003DA5"/>
+      <stop offset="100%" stop-color="#14377C"/>
     </linearGradient>
   </defs>
-  <!-- Mark: yellow badge with river-wave + dollar bill, burgundy accents -->
+  <!-- Navy badge with yellow sunburst + river mark -->
   <g transform="translate(6,14)">
-    <rect x="0" y="0" width="64" height="60" rx="14" fill="url(#ce-gr)"/>
-    <rect x="0" y="0" width="64" height="60" rx="14" fill="none" stroke="#2D0112" stroke-width="1.5" opacity=".4"/>
-    <!-- river waves -->
-    <path d="M10 40 Q20 34 30 40 T50 40 T54 40" fill="none" stroke="#2D0112" stroke-width="2.4" stroke-linecap="round" opacity=".85"/>
-    <path d="M10 46 Q20 40 30 46 T50 46" fill="none" stroke="#2D0112" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
-    <!-- stylized dollar bill -->
-    <rect x="14" y="14" width="36" height="20" rx="3" fill="#FFFFFF"/>
-    <rect x="14" y="14" width="36" height="20" rx="3" fill="none" stroke="#2D0112" stroke-width=".8" opacity=".5"/>
-    <circle cx="32" cy="24" r="5.5" fill="none" stroke="#2D0112" stroke-width="1.4"/>
-    <text x="32" y="27.5" text-anchor="middle" font-family="'Poppins','Helvetica Neue',Arial,sans-serif" font-size="9" font-weight="800" fill="#2D0112">$</text>
-    <!-- speed marks -->
-    <path d="M54 18 L60 18 M56 23 L62 23 M58 28 L64 28" stroke="#2D0112" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+    <rect x="0" y="0" width="64" height="60" rx="14" fill="url(#ce-bg)"/>
+    <!-- yellow sunburst (stars-and-stripes nod) -->
+    <circle cx="32" cy="30" r="17" fill="#FFC52B"/>
+    <!-- river waves over the sunburst -->
+    <path d="M10 44 Q20 38 30 44 T50 44 T54 44" fill="none" stroke="#FFC52B" stroke-width="2.6" stroke-linecap="round" opacity=".95"/>
+    <path d="M10 50 Q20 44 30 50 T50 50" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+    <!-- dollar inside the sunburst -->
+    <text x="32" y="36" text-anchor="middle" font-family="'Poppins','Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="900" fill="#14377C">$</text>
   </g>
   <!-- Wordmark -->
   <g transform="translate(82,0)">
-    <text x="0" y="40" font-family="'Poppins','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="800" fill="#2D0112" letter-spacing="-.3">Cash Express</text>
-    <text x="0" y="66" font-family="'Poppins','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="600" fill="#E0A800" letter-spacing="6">RIVERSIDE</text>
-    <rect x="0" y="72" width="36" height="3" rx="1.5" fill="#FFC52B"/>
+    <text x="0" y="40" font-family="'Poppins','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="800" fill="#14377C" letter-spacing="-.3">Cash Express</text>
+    <text x="0" y="66" font-family="'Poppins','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="600" fill="#003DA5" letter-spacing="6">RIVERSIDE</text>
+    <rect x="0" y="72" width="52" height="3" rx="1.5" fill="#FFC52B"/>
   </g>
 </svg>
