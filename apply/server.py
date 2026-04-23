@@ -1423,13 +1423,13 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_json(200, settings)
             except Exception as e:
                 self.send_json(500, {'error': str(e)})
-        elif self.path in ('/', '/apply'):
+        elif self.path.split('?')[0] in ('/', '/apply'):
             try:
                 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'frontend', 'index.html'), encoding='utf-8') as f:
                     self.send_html(200, f.read())
             except FileNotFoundError:
                 self.send_json(404, {'error': 'index.html not found'})
-        elif self.path == '/styles.css':
+        elif self.path.split('?')[0] == '/styles.css':
             try:
                 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'frontend', 'styles.css'), encoding='utf-8') as f:
                     body = f.read().encode('utf-8')
@@ -1440,7 +1440,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.wfile.write(body)
             except FileNotFoundError:
                 self.send_json(404, {'error': 'styles.css not found'})
-        elif self.path == '/script.js':
+        elif self.path.split('?')[0] == '/script.js':
             try:
                 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'frontend', 'script.js'), encoding='utf-8') as f:
                     body = f.read().encode('utf-8')
