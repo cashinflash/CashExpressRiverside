@@ -4559,3 +4559,135 @@ button.btn-apply:hover, button.btn-apply:focus {
   .mobile-menu-logo img { height: 44px !important; max-height: 44px !important; }
   .footer-bottom-left img, .pre-footer img { height: 52px !important; max-height: 52px !important; }
 }
+
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v13 — unified blob field, spacing audit, alternating rhythm,
+   logo size unification at 80px
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* ── Blob field (shared between marketing + apply) ── */
+.ce-blob-field {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+.ce-blob {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(0.3px);
+}
+.b-yellow { background: #FFC52B; }
+.b-navy   { background: #003DA5; }
+
+/* Sizes */
+.b-large  { width: 480px; height: 440px; border-radius: 62% 38% 47% 53% / 55% 48% 52% 45%; }
+.b-mid    { width: 280px; height: 260px; border-radius: 55% 45% 60% 40% / 50% 50% 50% 50%; }
+.b-small  { width: 160px; height: 150px; border-radius: 58% 42% 52% 48% / 50% 50% 50% 50%; }
+
+/* Opacity scheme: yellow a bit louder, navy subtle */
+.b-yellow.b-large { opacity: .16; }
+.b-navy.b-large   { opacity: .07; }
+.b-yellow.b-mid   { opacity: .14; }
+.b-navy.b-mid     { opacity: .06; }
+.b-yellow.b-small { opacity: .20; }
+.b-navy.b-small   { opacity: .08; }
+
+/* Distinct positions per blob so they scatter evenly */
+.b-1  { top: -140px;  right: -160px;  transform: rotate(-12deg); }     /* large yellow — TR */
+.b-2  { bottom: -160px; left: -180px; transform: rotate(18deg); }      /* large navy — BL */
+.b-3  { top: 45%; right: -180px;       transform: rotate(-22deg); }    /* large yellow — mid-right */
+.b-4  { top: 18%; left: -120px;        transform: rotate(14deg); }     /* mid navy — upper-left */
+.b-5  { top: 62%; left: -100px;        transform: rotate(-8deg); }     /* mid yellow — lower-left */
+.b-6  { top: 8%;  right: 30%;          transform: rotate(12deg); }     /* mid navy — top-center-right */
+.b-7  { bottom: 10%; right: 28%;       transform: rotate(-16deg); }    /* mid yellow — bottom-center */
+.b-8  { top: 30%; left: 35%;           transform: rotate(8deg); }      /* small yellow accent */
+.b-9  { top: 72%; right: 18%;          transform: rotate(-14deg); }    /* small navy accent */
+.b-10 { top: 6%;  left: 48%;           transform: rotate(22deg); }     /* small navy accent — top */
+
+/* Mobile: shrink + drop the smallest three */
+@media (max-width: 800px) {
+  .b-large  { width: 360px; height: 320px; }
+  .b-mid    { width: 220px; height: 200px; }
+  .b-small  { display: none; }
+  .b-6, .b-7 { opacity: .10; }
+}
+@media (max-width: 500px) {
+  .b-large  { width: 280px; height: 260px; }
+  .b-mid    { width: 180px; height: 160px; }
+  .b-4, .b-6, .b-7 { display: none; }
+}
+
+/* ── Unified section padding + alternating surface rhythm ── */
+.page-hero     { padding: 120px 0 110px !important; margin: 0 !important; }
+.trust-strip,
+.trust-strip-v2 { padding: 56px 0 !important; margin: 0 !important; background: #FFFFFF !important; }
+.big-stats     { padding: 72px 0 !important;  margin: 0 !important; background: #FFFAE8 !important; }
+.features      { padding: 140px 0 !important; margin: 0 !important; background: #FFFFFF !important; }
+.use-cases     { padding: 140px 0 !important; margin: 0 !important; background: #FFFAE8 !important; }
+.testimonials  { padding: 140px 0 !important; margin: 0 !important; background: #FFFFFF !important; }
+.how-it-works  { padding: 140px 0 !important; margin: 0 !important; background: #FFFAE8 !important; }
+.requirements  { padding: 140px 0 !important; margin: 0 !important; background: #FFFFFF !important; }
+.service-area  { padding: 140px 0 !important; margin: 0 !important; background: #FFFAE8 !important; }
+.faq           { padding: 140px 0 !important; margin: 0 !important; background: #FFFFFF !important; }
+.pre-footer    { padding: 130px 0 !important; margin: 0 !important; }
+
+/* Mobile: tighter spacing so the page isn't endless */
+@media (max-width: 700px) {
+  .page-hero { padding: 80px 0 !important; }
+  .trust-strip, .trust-strip-v2 { padding: 36px 0 !important; }
+  .big-stats { padding: 48px 0 !important; }
+  .features, .use-cases, .testimonials, .how-it-works,
+  .requirements, .service-area, .faq { padding: 92px 0 !important; }
+  .pre-footer { padding: 88px 0 !important; }
+}
+
+/* ── Logo unification at 80px ── */
+.site-header .logo img,
+.cer-header .cer-logo img {
+  height: 80px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 80px !important;
+  object-fit: contain;
+  display: block;
+}
+.site-header .header-inner,
+.cer-header .cer-header-inner { min-height: 96px; }
+.mobile-menu-logo img,
+.mobile-menu-header img {
+  height: 60px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 60px !important;
+  object-fit: contain;
+}
+.footer-bottom-left img {
+  height: 68px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 68px !important;
+  object-fit: contain;
+}
+.pre-footer img {
+  height: 68px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 68px !important;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .site-header .logo img,
+  .cer-header .cer-logo img { height: 60px !important; max-height: 60px !important; }
+  .site-header .header-inner,
+  .cer-header .cer-header-inner { min-height: 80px; }
+}
+@media (max-width: 480px) {
+  .site-header .logo img,
+  .cer-header .cer-logo img { height: 52px !important; max-height: 52px !important; }
+  .mobile-menu-logo img, .mobile-menu-header img { height: 48px !important; max-height: 48px !important; }
+  .footer-bottom-left img, .pre-footer img { height: 56px !important; max-height: 56px !important; }
+}
