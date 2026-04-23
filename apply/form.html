@@ -42,7 +42,7 @@ body{background:linear-gradient(160deg,#F5F8FF 0%,#EFF3FC 40%,#fff 100%);font-fa
 .step{display:flex;align-items:center;gap:8px;flex:1}
 .step-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;transition:all .3s}
 .step-num.done{background:var(--green);color:white}
-.step-num.active{background:var(--green);color:white;box-shadow:0 0 0 4px rgba(21,193,93,.15)}
+.step-num.active{background:var(--green);color:white;box-shadow:0 0 0 4px rgba(0,61,165,.15)}
 .step-num.todo{background:var(--border);color:var(--muted)}
 .step-label{font-size:12px;font-weight:600;color:var(--muted);white-space:nowrap}
 .step-label.active{color:var(--green)}
@@ -72,7 +72,7 @@ input.error,select.error{border-color:var(--red)}
 /* BANK OPTIONS */
 .bank-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
 .bank-opt{border:2px solid var(--border2);border-radius:16px;padding:18px 16px;cursor:pointer;transition:all .2s;text-align:center;background:var(--surface)}
-.bank-opt:hover{border-color:var(--green-border);background:var(--green-light);box-shadow:0 4px 16px rgba(21,193,93,.1)}
+.bank-opt:hover{border-color:var(--green-border);background:var(--green-light);box-shadow:0 4px 16px rgba(255,197,43,.35)}
 .bank-opt.selected{border-color:var(--green);background:var(--green-light)}
 .bank-opt.disabled{opacity:.4;cursor:not-allowed;pointer-events:none}
 .bank-opt-icon{font-size:28px;margin-bottom:8px}
@@ -103,8 +103,8 @@ input.error,select.error{border-color:var(--red)}
 .file-ready{display:none;margin-top:10px;padding:10px 14px;background:white;border:1px solid var(--green-border);border-radius:10px;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--green)}
 
 /* SUBMIT */
-.submit-btn{width:100%;padding:18px;background:#003DA5;color:white;border:none;border-radius:50px;font-size:16px;font-weight:700;font-family:var(--sans);cursor:pointer;transition:all .2s;box-shadow:0 4px 20px rgba(21,193,93,.25);position:relative;overflow:hidden}
-.submit-btn:hover:not(:disabled){transform:translateY(-1px);background:#14377C;box-shadow:0 8px 28px rgba(21,193,93,.35)}
+.submit-btn{width:100%;padding:18px;background:#003DA5;color:white;border:none;border-radius:50px;font-size:16px;font-weight:700;font-family:var(--sans);cursor:pointer;transition:all .2s;box-shadow:0 4px 20px rgba(255,197,43,.40);position:relative;overflow:hidden}
+.submit-btn:hover:not(:disabled){transform:translateY(-1px);background:#14377C;box-shadow:0 8px 28px rgba(255,197,43,.35)}
 .submit-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
 .submit-btn.loading{color:transparent}
 .submit-btn.loading::after{content:'';position:absolute;width:22px;height:22px;border:3px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;top:50%;left:50%;margin:-11px;animation:spin .7s linear infinite}
@@ -149,17 +149,17 @@ input.error,select.error{border-color:var(--red)}
 }
 .page::before,.page::after{content:'';position:absolute;border-radius:50%;pointer-events:none;z-index:0}
 .page::before{width:200px;height:200px;background:rgba(0,61,165,.05);top:8%;right:-60px;border-radius:40% 60% 50% 50%/50% 40% 60% 50%;animation:floatBlob 10s ease-in-out infinite}
-.page::after{width:140px;height:130px;background:rgba(21,193,93,.04);bottom:15%;left:-50px;border-radius:50% 40% 60% 50%/40% 50% 50% 60%;animation:floatBlob 12s ease-in-out infinite -5s}
-.form-blob-1{position:absolute;width:150px;height:150px;background:rgba(21,193,93,.06);border-radius:30% 70% 60% 40%/50% 30% 70% 50%;top:25%;left:65%;animation:floatBlob 8s ease-in-out infinite -2s;pointer-events:none;z-index:0}
-.form-blob-2{position:absolute;width:90px;height:90px;background:rgba(21,193,93,.04);border-radius:60% 40% 50% 50%/40% 60% 40% 60%;bottom:35%;left:-3%;animation:floatBlob 11s ease-in-out infinite -7s;pointer-events:none;z-index:0}
+.page::after{width:140px;height:130px;background:rgba(0,61,165,.08);bottom:15%;left:-50px;border-radius:50% 40% 60% 50%/40% 50% 50% 60%;animation:floatBlob 12s ease-in-out infinite -5s}
+.form-blob-1{position:absolute;width:150px;height:150px;background:rgba(255,197,43,.24);border-radius:30% 70% 60% 40%/50% 30% 70% 50%;top:25%;left:65%;animation:floatBlob 8s ease-in-out infinite -2s;pointer-events:none;z-index:0}
+.form-blob-2{position:absolute;width:90px;height:90px;background:rgba(0,61,165,.08);border-radius:60% 40% 50% 50%/40% 60% 40% 60%;bottom:35%;left:-3%;animation:floatBlob 11s ease-in-out infinite -7s;pointer-events:none;z-index:0}
 .hdr,.progress,.card,.step-btns,.consent-box,.security-bar,.success-card{position:relative;z-index:1}
 
 /* CARD HOVER */
 .card{transition:box-shadow .2s,border-color .2s}
-.card:hover{border-color:var(--green);box-shadow:0 4px 16px rgba(21,193,93,.1)}
+.card:hover{border-color:var(--green);box-shadow:0 4px 16px rgba(255,197,43,.35)}
 
 /* INPUT FOCUS GLOW */
-input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(21,193,93,.1)}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(255,197,43,.35)}
 
 /* PROGRESS BAR POLISH */
 @keyframes stepDone{0%{transform:scale(.8)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
@@ -167,7 +167,7 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(21,193,93,.1)}
 
 /* SUCCESS GLOW */
 .success-card.show{animation:fadeUp .6s ease}
-.success-icon{box-shadow:0 0 0 12px rgba(21,193,93,.1),0 0 0 24px rgba(0,61,165,.05)}
+.success-icon{box-shadow:0 0 0 12px rgba(255,197,43,.35),0 0 0 24px rgba(0,61,165,.05)}
 
 /* RESPONSIVE */
 @media(max-width:768px){
