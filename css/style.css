@@ -4139,3 +4139,34 @@ main { position: relative; z-index: 0; }
   .gb-6 { width: 320px; height: 320px; left: -140px; top: 3520px; }
   .gb-7 { width: 240px; height: 220px; right: -100px; top: 4200px; }
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   LOGO SIZING v10 — raster PNG now replacing the SVG wordmark.
+   Constrain height with auto width so aspect ratio stays natural no
+   matter what dimensions the uploaded PNG has.
+   ═════════════════════════════════════════════════════════════════════ */
+.site-header .logo img {
+  height: 48px !important;
+  width: auto !important;
+  max-width: 240px;
+  object-fit: contain;
+  display: block;
+}
+.mobile-menu-logo img {
+  height: 40px !important;
+  width: auto !important;
+  max-width: 200px;
+  object-fit: contain;
+}
+.footer-bottom-left img,
+.pre-footer img {
+  height: 48px !important;
+  width: auto !important;
+  max-width: 260px;
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .site-header .logo img { height: 40px !important; max-width: 200px; }
+  .mobile-menu-logo img  { height: 36px !important; }
+  .footer-bottom-left img, .pre-footer img { height: 42px !important; }
+}
