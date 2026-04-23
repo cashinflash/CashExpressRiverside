@@ -4511,3 +4511,51 @@ button.btn-apply:hover, button.btn-apply:focus {
 @media (max-width: 500px) {
   .site-header .logo img { height: 52px !important; max-width: 220px !important; }
 }
+
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v12 — fix logo sizing cascade (max-width was fighting height)
+   ═════════════════════════════════════════════════════════════════════ */
+.site-header .logo img {
+  height: 72px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 72px !important;
+  min-height: 48px !important;
+  object-fit: contain;
+  display: block;
+}
+.mobile-menu-logo img,
+.mobile-menu-header img {
+  height: 56px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 56px !important;
+  object-fit: contain;
+}
+.footer-bottom-left img {
+  height: 64px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 64px !important;
+  object-fit: contain;
+}
+.pre-footer img {
+  height: 64px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 64px !important;
+  object-fit: contain;
+}
+.site-header .header-inner { min-height: 88px; }
+
+/* Mobile — shrink proportionally, but still readable */
+@media (max-width: 700px) {
+  .site-header .logo img { height: 56px !important; max-height: 56px !important; }
+  .site-header .header-inner { min-height: 72px; }
+}
+@media (max-width: 480px) {
+  .site-header .logo img { height: 48px !important; max-height: 48px !important; }
+  .mobile-menu-logo img { height: 44px !important; max-height: 44px !important; }
+  .footer-bottom-left img, .pre-footer img { height: 52px !important; max-height: 52px !important; }
+}

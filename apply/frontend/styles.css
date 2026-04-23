@@ -667,3 +667,17 @@ label {
   .card { padding: 18px 14px !important; border-radius: 16px !important; }
   .hdr-title { font-size: 1.35rem !important; }
 }
+
+
+/* LOGO SIZING FIX for apply page header */
+.cer-header .cer-logo img {
+  height: 72px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 72px !important;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 700px) {
+  .cer-header .cer-logo img { height: 52px !important; max-height: 52px !important; }
+}
