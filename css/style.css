@@ -3445,3 +3445,232 @@ body {
 /* Disable the hero angled blob on contact page (too busy with the map) */
 .contact-hero::before, .contact-hero::after { display: none !important; }
 .contact-hero .hero-grid::before { display: none !important; }
+
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v7 — friendly-fintech landing aesthetic
+   Larger display type, softer alternating surfaces (white / pale blue /
+   pale cream), rounder cards with softer shadows, testimonials row with
+   star rating + avatar, restored step-number circles in how-it-works.
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* ── Expanded type scale for a more display-y hero ── */
+.page-hero .hero-content h1 {
+  font-size: clamp(2.8rem, 6.2vw, 5rem) !important;
+  line-height: .98 !important;
+  letter-spacing: -.035em !important;
+  font-weight: 800 !important;
+}
+.page-hero .hero-subtitle {
+  font-size: 1.2rem !important;
+  line-height: 1.5 !important;
+  color: #475569 !important;
+}
+
+/* ── Softer section alternation: white -> pale blue -> pale cream -> repeat ── */
+.features      { background: #FFFFFF !important; }
+.use-cases     { background: #F5F8FF !important; }   /* pale blue */
+.testimonials  {
+  background: #FFFAE8 !important;                    /* warm cream so the row pops */
+  padding: 100px 0 !important;
+  position: relative;
+  overflow: hidden;
+}
+.testimonials::before {
+  content: "";
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 320px; height: 320px;
+  background: #FFC52B;
+  opacity: .18;
+  border-radius: 62% 38% 47% 53% / 55% 48% 52% 45%;
+  transform: rotate(-14deg);
+  pointer-events: none;
+}
+.how-it-works  { background: #FFFFFF !important; }
+.requirements  { background: #F5F8FF !important; }
+.service-area  { background: #FFFFFF !important; }
+.faq           { background: #FFFAE8 !important; }
+
+/* ── Bigger, rounder cards across the board ── */
+.feature-card, .use-case-card, .faq-item {
+  border-radius: 22px !important;
+}
+
+/* ── Testimonial cards ── */
+.testimonials .section-heading { color: #0F2744 !important; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.tm-card {
+  background: #FFFFFF;
+  border: 1px solid #E6EAF0;
+  border-radius: 24px;
+  padding: 28px 24px;
+  box-shadow: 0 1px 3px rgba(15,23,42,.04);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.tm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,61,165,.10);
+}
+.tm-stars {
+  display: flex;
+  gap: 2px;
+}
+.tm-card blockquote {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: #0F172A;
+  font-weight: 500;
+  flex: 1;
+}
+.tm-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #E6EAF0;
+}
+.tm-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #003DA5, #14377C);
+  color: #FFC52B;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+.tm-card figcaption strong {
+  display: block;
+  color: #0F2744;
+  font-size: .95rem;
+  letter-spacing: -.01em;
+}
+.tm-card figcaption span {
+  display: block;
+  color: #64748b;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; max-width: 520px; }
+  .testimonials      { padding: 72px 0 !important; }
+}
+
+/* ── How-it-works: restored step numbers + softer cards ── */
+.how-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1.2fr !important;
+  gap: 72px !important;
+  align-items: start;
+}
+.how-left .section-heading { text-align: left !important; }
+.how-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.step-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E6EAF0 !important;
+  border-radius: 20px !important;
+  padding: 22px 24px !important;
+  display: grid !important;
+  grid-template-columns: 56px 1fr !important;
+  align-items: center;
+  gap: 18px !important;
+  box-shadow: 0 1px 3px rgba(15,23,42,.04);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.step-card:hover {
+  transform: translateX(3px);
+  box-shadow: 0 12px 32px rgba(0,61,165,.10);
+}
+.step-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #003DA5, #14377C);
+  color: #FFC52B;
+  font-weight: 800;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0,61,165,.25);
+  flex: 0 0 auto;
+}
+.step-label {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #0F2744;
+  margin-bottom: 4px;
+  letter-spacing: -.01em;
+}
+.step-card p {
+  color: #4B5563;
+  font-size: .95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.testimonial-card {
+  background: linear-gradient(135deg, #003DA5, #14377C);
+  color: #FFFFFF;
+  padding: 24px 26px;
+  border-radius: 20px;
+  margin-top: 24px;
+}
+.testimonial-card .testimonial-name {
+  color: #FFC52B !important;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .02em;
+}
+.testimonial-card .testimonial-quote {
+  color: #FFFFFF !important;
+  font-size: 1rem;
+  line-height: 1.55;
+  margin-top: 10px;
+  font-style: italic;
+}
+@media (max-width: 900px) {
+  .how-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .how-left .section-heading { text-align: left !important; }
+}
+
+/* ── Sweet softer shadows everywhere ── */
+.feature-card, .use-case-card, .tm-card, .step-card, .contact-card {
+  box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 2px 8px rgba(15,23,42,.03) !important;
+}
+
+/* ── Bigger Apply button lift on hover ── */
+.btn-apply:hover, .btn-apply.btn-lg:hover {
+  transform: translateY(-3px) !important;
+}
+
+/* ── Refine FAQ contrast against warm section background ── */
+.faq { padding: 100px 0 !important; }
+.faq-item { background: #FFFFFF !important; }
+.faq-item summary { color: #0F2744 !important; }
+
+/* ── Pre-footer headline sized for impact ── */
+.pre-footer h2 {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem) !important;
+  letter-spacing: -.025em !important;
+}
