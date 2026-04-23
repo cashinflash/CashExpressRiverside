@@ -3176,3 +3176,272 @@ table tr:nth-child(even) td { background: var(--cer-bg) !important; }
   .service-area::before { height: 340px; }
   .pre-footer::before, .pre-footer::after { width: 320px; height: 300px; }
 }
+
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v5 — modern, friendly, card-based landing design
+   Clean typographic hierarchy, bigger border-radius everywhere, softer
+   shadows, alternating whitespace between sections, refined trust strip,
+   new contact-page styles.
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* Global typographic + spacing rhythm */
+body {
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Section padding uplift for breathing room */
+.page-hero { padding: 90px 0 110px !important; }
+.features, .use-cases, .requirements, .how-it-works, .service-area, .faq {
+  padding: 100px 0 !important;
+}
+
+/* Alternating section surface: odd sections white, even sections soft-blue */
+.page-hero { background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FF 100%) !important; }
+.features   { background: #FFFFFF !important; }
+.use-cases  { background: var(--cer-blue-faint) !important; }
+.service-area { background: #FFFFFF !important; }
+.faq        { background: var(--cer-blue-faint) !important; }
+
+/* ── Hero refinements ── */
+.page-hero .hero-grid { gap: 64px !important; }
+.page-hero .hero-content h1 {
+  font-size: clamp(2.6rem, 5.4vw, 4.4rem) !important;
+  line-height: 1.02 !important;
+  font-weight: 800 !important;
+  letter-spacing: -.028em !important;
+  margin-bottom: 22px !important;
+}
+.page-hero .hero-subtitle {
+  font-size: 1.15rem !important;
+  line-height: 1.55 !important;
+  color: #475569 !important;
+  max-width: 540px;
+}
+.hero-checks { display: flex !important; flex-wrap: wrap !important; gap: 14px 22px !important; margin: 20px 0 28px !important; padding: 0 !important; list-style: none !important; }
+.hero-checks li { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: #0F172A; }
+.hero-link { color: var(--cer-blue) !important; font-weight: 600; margin-left: 14px; }
+
+/* Rounded, softer calculator card */
+.loan-calc {
+  border-radius: 28px !important;
+  padding: 36px !important;
+  box-shadow: 0 22px 60px rgba(0,61,165,.10), 0 2px 6px rgba(0,0,0,.04) !important;
+  border: 1px solid var(--cer-border) !important;
+  background: #FFFFFF !important;
+}
+.loan-calc h2 { font-size: .95rem !important; }
+.calc-amount { font-size: 3rem !important; font-weight: 800 !important; color: var(--cer-blue) !important; }
+
+/* ── Trust strip (NEW) — 4-up icon cards below the hero ── */
+.trust-strip {
+  padding: 28px 0 !important;
+  background: #FFFFFF !important;
+  border-top: 1px solid var(--cer-border);
+  border-bottom: 1px solid var(--cer-border);
+  position: relative;
+  z-index: 2;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+}
+.trust-item svg { flex: 0 0 auto; }
+.trust-item strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cer-blue-deep);
+  letter-spacing: .01em;
+}
+.trust-item span {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.35;
+}
+@media (max-width: 900px) {
+  .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 16px 24px; }
+}
+@media (max-width: 520px) {
+  .trust-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Features section: cleaner 2-col, bigger rounded cards ── */
+.features-grid { gap: 88px !important; }
+.features-content .section-heading {
+  font-size: clamp(2rem, 3.6vw, 2.8rem) !important;
+  letter-spacing: -.02em !important;
+}
+.feature-card {
+  border-radius: 20px !important;
+  padding: 26px 28px !important;
+  border-left: 4px solid var(--cer-yellow) !important;
+  box-shadow: 0 1px 3px rgba(15,23,42,.04) !important;
+}
+.feature-card:hover { box-shadow: 0 16px 40px rgba(0,61,165,.10) !important; }
+
+/* ── Use cases: softer + roomier cards ── */
+.use-cases-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 22px !important;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.use-case-card {
+  border-radius: 22px !important;
+  padding: 32px 22px !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--cer-border) !important;
+  box-shadow: 0 1px 3px rgba(15,23,42,.04) !important;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease !important;
+}
+.use-case-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--cer-yellow);
+  box-shadow: 0 18px 40px rgba(0,61,165,.10) !important;
+}
+.use-case-card h3 { font-size: 1rem !important; color: var(--cer-blue-deep) !important; }
+@media (max-width: 700px) {
+  .use-cases-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 460px) {
+  .use-cases-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Buttons: tiny shape adjustments for modern-app feel ── */
+.btn-apply, .btn-apply.btn-lg, .btn-apply.btn-sm, .composite-btn {
+  padding: 14px 32px !important;
+  font-size: 16px !important;
+  box-shadow: 0 6px 16px rgba(255,197,43,.40) !important;
+}
+.btn-apply.btn-lg {
+  padding: 18px 40px !important;
+  font-size: 18px !important;
+  box-shadow: 0 12px 28px rgba(255,197,43,.45) !important;
+}
+
+/* ── FAQ cards: bigger radius, more airy ── */
+.faq-item {
+  border-radius: 18px !important;
+  margin-bottom: 14px !important;
+}
+.faq-item summary { padding: 22px 26px !important; font-size: 1.02rem !important; }
+.faq-answer { padding: 18px 26px 26px !important; }
+
+/* ── FAQ contact card: more approachable ── */
+.faq-contact-card {
+  border-radius: 24px !important;
+  padding: 32px !important;
+}
+
+/* ── Pre-footer CTA: bigger, rounder, bolder ── */
+.pre-footer { padding: 90px 0 !important; }
+.pre-footer .container.pre-footer-inner {
+  max-width: 820px;
+  text-align: center;
+  margin: 0 auto;
+}
+.pre-footer h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem) !important;
+  margin-bottom: 28px !important;
+  letter-spacing: -.02em !important;
+}
+
+/* ── Footer ── */
+.site-footer { padding-top: 72px !important; }
+
+/* ═══════════════ CONTACT PAGE STYLES ═══════════════ */
+.contact-hero {
+  padding: 80px 0 60px !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--cer-blue-faint) 100%) !important;
+}
+.contact-hero h1 {
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem) !important;
+  line-height: 1.05 !important;
+  font-weight: 800 !important;
+  color: var(--cer-blue-deep);
+  margin-bottom: 18px !important;
+  letter-spacing: -.02em;
+}
+.contact-details {
+  padding: 40px 0 80px !important;
+  background: var(--cer-blue-faint);
+  position: relative;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.contact-card {
+  background: #FFFFFF;
+  border: 1px solid var(--cer-border);
+  border-radius: 24px;
+  padding: 32px 28px;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(15,23,42,.04);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.contact-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0,61,165,.10); }
+.contact-icon {
+  width: 56px; height: 56px;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  background: var(--cer-blue-faint);
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+.contact-card h3 {
+  font-size: 1.05rem;
+  color: var(--cer-blue-deep);
+  margin-bottom: 8px;
+}
+.contact-card p {
+  font-size: 15px;
+  color: #0F172A;
+  margin: 4px 0;
+}
+.contact-card p a { color: var(--cer-blue); font-weight: 700; text-decoration: none; }
+.contact-card p a:hover { text-decoration: underline; }
+.contact-card .contact-sub {
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 1.45;
+}
+@media (max-width: 820px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+.contact-map-section {
+  padding: 90px 0 !important;
+  background: #FFFFFF;
+}
+.contact-map-section .section-heading {
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem) !important;
+  margin-bottom: 14px !important;
+}
+.map-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(0,61,165,.14), 0 2px 6px rgba(0,0,0,.04);
+}
+
+/* Disable the hero angled blob on contact page (too busy with the map) */
+.contact-hero::before, .contact-hero::after { display: none !important; }
+.contact-hero .hero-grid::before { display: none !important; }
