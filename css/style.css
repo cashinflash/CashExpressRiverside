@@ -84,7 +84,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   font-size: .95rem;
   transition: background .2s, transform .15s;
 }
-.btn-apply:hover { background: #0C7137; transform: translateY(-1px); }
+.btn-apply:hover { background: #E0A800; transform: translateY(-1px); }
 .btn-apply.btn-lg { padding: 16px 36px; font-size: 1.05rem; }
 .btn-apply.btn-sm { padding: 8px 20px; font-size: .85rem; }
 .btn-apply.btn-icon svg { transition: transform .2s; }
@@ -253,7 +253,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
 .menu-toggle.active span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
 
-/* Mobile Menu — Dark green full-screen overlay */
+/* Mobile Menu — Navy full-screen overlay */
 .mobile-menu {
   position: fixed;
   top: 0; left: 0;
@@ -367,7 +367,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   font-weight: 600;
   font-size: .95rem;
 }
-.mobile-btn-row .btn-apply:hover { background: #0C7137; }
+.mobile-btn-row .btn-apply:hover { background: #E0A800; }
 .mobile-btn-row .btn-login {
   flex: 1;
   text-align: center;
@@ -396,7 +396,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   content: '';
   position: absolute;
   border-radius: 50%;
-  background: rgba(14,135,65,.07);
+  background: rgba(0,61,165,.07);
   z-index: 0;
   animation: floatBlob 8s ease-in-out infinite;
 }
@@ -416,7 +416,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
 .hero-blob-1,
 .hero-blob-2 {
   position: absolute;
-  background: rgba(14,135,65,.06);
+  background: rgba(0,61,165,.06);
   z-index: 0;
   pointer-events: none;
   animation: floatBlob 10s ease-in-out infinite;
@@ -718,7 +718,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   transform: scale(1.04) translateY(-4px);
   background: rgba(255,255,255,.14);
   border-color: rgba(255,255,255,.3);
-  box-shadow: 0 8px 40px rgba(14,135,65,.15), 0 4px 30px rgba(0,0,0,.2);
+  box-shadow: 0 8px 40px rgba(0,61,165,.12), 0 4px 30px rgba(0,0,0,.2);
 }
 @media (hover: none) {
   .proof-card.glass:active {
@@ -742,7 +742,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
 .social-proof::after {
   content: '';
   position: absolute;
-  background: rgba(14,135,65,.05);
+  background: rgba(0,61,165,.05);
   z-index: 0;
   pointer-events: none;
   animation: floatBlob 10s ease-in-out infinite;
@@ -772,7 +772,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 300px; height: 300px;
   bottom: -100px; left: -60px;
-  background: rgba(14,135,65,.05);
+  background: rgba(0,61,165,.05);
   border-radius: 40% 60% 50% 50% / 60% 40% 50% 50%;
   z-index: 0;
   pointer-events: none;
@@ -783,7 +783,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 90px; height: 90px;
   top: 15%; right: 8%;
-  background: rgba(14,135,65,.06);
+  background: rgba(0,61,165,.06);
   border-radius: 50% 40% 60% 30% / 40% 50% 30% 60%;
   z-index: 0;
   pointer-events: none;
@@ -811,7 +811,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
 }
 .feature-card:hover {
   border-color: #FFC52B;
-  box-shadow: 0 4px 16px rgba(14,135,65,.1);
+  box-shadow: 0 4px 16px rgba(0,61,165,.10);
 }
 .feature-card h3, .feature-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
 .feature-card p { color: #555; font-size: .88rem; margin-bottom: 0; }
@@ -840,7 +840,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   top: 0; left: 50%;
   transform: translateX(-50%);
   width: 80%; height: 60%;
-  background: radial-gradient(ellipse at center, rgba(14,135,65,.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(255,197,43,.14) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -850,7 +850,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   bottom: -60px; right: 5%;
   width: 200px; height: 200px;
-  background: rgba(14,135,65,.06);
+  background: rgba(0,61,165,.06);
   border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
   animation: floatBlob 10s ease-in-out infinite;
   animation-delay: -3s;
@@ -902,7 +902,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 320px; height: 320px;
   bottom: -80px; right: -80px;
-  background: rgba(14,135,65,.05);
+  background: rgba(0,61,165,.05);
   border-radius: 50% 40% 60% 30% / 40% 50% 30% 60%;
   z-index: 0;
   animation: floatBlob 10s ease-in-out infinite;
@@ -913,7 +913,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 80px; height: 80px;
   top: 15%; left: 8%;
-  background: rgba(14,135,65,.05);
+  background: rgba(0,61,165,.05);
   border-radius: 60% 40% 30% 70% / 50% 60% 50% 40%;
   z-index: 0;
   pointer-events: none;
@@ -961,7 +961,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
 }
 .step-card:hover {
   border-color: #FFC52B;
-  box-shadow: 0 4px 20px rgba(14,135,65,.08);
+  box-shadow: 0 4px 20px rgba(0,61,165,.08);
 }
 .step-card > img { flex-shrink: 0; width: 64px; height: 64px; }
 .step-label {
@@ -987,7 +987,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 240px; height: 240px;
   top: -80px; left: -50px;
-  background: rgba(14,135,65,.06);
+  background: rgba(0,61,165,.06);
   border-radius: 50%;
   z-index: 0;
   animation: floatBlob 11s ease-in-out infinite;
@@ -1089,7 +1089,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 180px; height: 180px;
   bottom: -50px; left: -30px;
-  background: rgba(14,135,65,.04);
+  background: rgba(0,61,165,.04);
   border-radius: 50% 40% 60% 30% / 40% 60% 30% 50%;
   z-index: 0;
   pointer-events: none;
@@ -1104,7 +1104,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 280px; height: 280px;
   top: -60px; right: -70px;
-  background: rgba(14,135,65,.04);
+  background: rgba(0,61,165,.04);
   border-radius: 30% 70% 60% 40% / 50% 40% 60% 50%;
   z-index: 0;
   pointer-events: none;
@@ -1396,7 +1396,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
 .page-hero-blob-2,
 .page-hero-blob-3 {
   position: absolute;
-  background: rgba(14,135,65,.06);
+  background: rgba(0,61,165,.06);
   z-index: 0;
   pointer-events: none;
   animation: floatBlob 10s ease-in-out infinite;
@@ -1524,7 +1524,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 200px; height: 200px;
   top: 10%; left: -50px;
-  background: rgba(14,135,65,.06);
+  background: rgba(0,61,165,.06);
   border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
   z-index: 0;
   pointer-events: none;
@@ -1536,7 +1536,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 100px; height: 100px;
   bottom: 20%; right: 5%;
-  background: rgba(14,135,65,.05);
+  background: rgba(0,61,165,.05);
   border-radius: 50% 30% 60% 40% / 40% 50% 40% 60%;
   z-index: 0;
   pointer-events: none;
@@ -1583,7 +1583,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 100px; height: 100px;
   top: 10%; right: 10%;
-  background: rgba(14,135,65,.05);
+  background: rgba(0,61,165,.05);
   border-radius: 30% 60% 50% 40% / 50% 30% 60% 50%;
   z-index: 0;
   pointer-events: none;
@@ -1599,7 +1599,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 180px; height: 180px;
   top: 40%; left: -50px;
-  background: rgba(14,135,65,.06);
+  background: rgba(0,61,165,.06);
   border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
   z-index: 0;
   pointer-events: none;
@@ -1621,7 +1621,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
 }
 .requirement-card:hover {
   border-color: #FFC52B;
-  box-shadow: 0 4px 20px rgba(14,135,65,.1);
+  box-shadow: 0 4px 20px rgba(0,61,165,.10);
 }
 .requirement-card h3, .requirement-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: #14377C; }
 .requirement-card p { color: #555; font-size: .88rem; }
@@ -1719,7 +1719,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
 }
 .about-testimonial-card:hover {
   border-color: #FFC52B;
-  box-shadow: 0 4px 20px rgba(14,135,65,.1);
+  box-shadow: 0 4px 20px rgba(0,61,165,.10);
 }
 .about-testimonial-card .testimonial-stars { margin-bottom: 12px; }
 .about-testimonial-card blockquote {
@@ -1752,7 +1752,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   padding: 32px;
   transition: border-color .3s, box-shadow .3s;
 }
-.location-card:hover { border-color: #FFC52B; box-shadow: 0 4px 20px rgba(14,135,65,.1); }
+.location-card:hover { border-color: #FFC52B; box-shadow: 0 4px 20px rgba(0,61,165,.10); }
 .location-badge {
   display: inline-block;
   padding: 4px 12px;
@@ -1816,7 +1816,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   position: absolute;
   width: 500px; height: 500px;
   top: -50px; right: -70px;
-  background: rgba(14,135,65,.08);
+  background: rgba(0,61,165,.08);
   border-radius: 50%;
   z-index: 0;
   pointer-events: none;
@@ -4169,4 +4169,210 @@ main { position: relative; z-index: 0; }
   .site-header .logo img { height: 40px !important; max-width: 200px; }
   .mobile-menu-logo img  { height: 36px !important; }
   .footer-bottom-left img, .pre-footer img { height: 42px !important; }
+}
+
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v10 — bulk fix pass
+   · Bigger logo (64px header, 56px mobile menu, 60px footer)
+   · Breathing room above testimonials section
+   · Pre-footer Apply button visibility fix (no more green flash)
+   · More flowing blobs, fixed-position for always-visible color wash
+   · Service-area Google Maps iframe styled
+   · Navy background wash as continuous sheet across scroll (apply-page style)
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* ── Logo sizes bumped — the PNG was reading as too small previously ── */
+.site-header .logo img {
+  height: 64px !important;
+  width: auto !important;
+  max-width: 320px !important;
+  object-fit: contain;
+}
+.mobile-menu-logo img,
+.mobile-menu-header img {
+  height: 56px !important;
+  width: auto !important;
+  max-width: 280px !important;
+}
+.footer-bottom-left img {
+  height: 60px !important;
+  width: auto !important;
+  max-width: 300px !important;
+}
+.pre-footer img {
+  height: 56px !important;
+  width: auto !important;
+  max-width: 280px !important;
+}
+.features-image-v2 .composite-logo,
+.composite-logo {
+  height: 40px !important;
+  width: auto !important;
+}
+
+/* Mobile tweaks — still prominent but compact */
+@media (max-width: 600px) {
+  .site-header .logo img { height: 54px !important; max-width: 240px !important; }
+  .mobile-menu-logo img, .mobile-menu-header img { height: 48px !important; }
+  .footer-bottom-left img { height: 52px !important; }
+  .pre-footer img { height: 48px !important; }
+}
+@media (max-width: 400px) {
+  .site-header .logo img { height: 48px !important; max-width: 200px !important; }
+}
+/* Header row grows a bit to fit the bigger logo */
+.site-header .header-inner { padding: 18px 0 !important; }
+
+/* ── Breathing room above 'What Riverside borrowers are saying' ── */
+.testimonials {
+  margin-top: 40px;
+  padding-top: 120px !important;
+  padding-bottom: 120px !important;
+}
+.testimonials .section-heading { margin-top: 12px !important; }
+
+/* ── Service-area Google Maps iframe styling ── */
+.service-area-map {
+  max-width: 920px;
+  margin: 0 auto 32px !important;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(0,61,165,.14), 0 2px 6px rgba(0,0,0,.04);
+}
+.service-area-map iframe {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 0;
+}
+@media (max-width: 600px) {
+  .service-area-map iframe { height: 300px; }
+}
+
+/* ── PRE-FOOTER Apply button — strong contrast against navy background ── */
+.pre-footer .btn-apply,
+.pre-footer .btn-apply.btn-lg {
+  background: #FFC52B !important;
+  color: #14377C !important;
+  border: 2px solid #FFC52B !important;
+  box-shadow: 0 16px 40px rgba(255,197,43,.55), 0 0 0 6px rgba(255,255,255,.08) !important;
+  font-weight: 800 !important;
+}
+.pre-footer .btn-apply:hover,
+.pre-footer .btn-apply.btn-lg:hover {
+  background: #FFFFFF !important;
+  color: #003DA5 !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 20px 48px rgba(255,255,255,.35) !important;
+  transform: translateY(-3px);
+}
+
+/* Just in case: global Apply button hover must never be green.
+   Any leftover rule that turned buttons green gets slapped here. */
+.btn-apply:hover,
+.btn-apply.btn-lg:hover,
+.mobile-btn-row .btn-apply:hover,
+.composite-btn:hover {
+  background: #E0A800 !important;
+  color: #14377C !important;
+  border-color: #E0A800 !important;
+}
+
+/* ── MORE BLOBS, SPREAD EVENLY (apply-page-style large organic shapes) ── */
+/* Keep the 7 absolute-positioned .gb-N we already had, and add 5 more
+   fixed-position blobs (like the apply page's body::before/after) so the
+   color wash stays visible as you scroll. */
+
+.global-blobs-fixed {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;   /* behind everything — only color, not content */
+  overflow: hidden;
+}
+.gbf {
+  position: absolute;
+  pointer-events: none;
+}
+/* Yellow viewport-fixed top-right wash */
+.gbf-1 {
+  top: -120px; right: -120px;
+  width: 480px; height: 440px;
+  background: #FFC52B;
+  opacity: .14;
+  border-radius: 62% 38% 47% 53% / 55% 48% 52% 45%;
+  transform: rotate(-14deg);
+}
+/* Navy viewport-fixed bottom-left wash */
+.gbf-2 {
+  bottom: -140px; left: -140px;
+  width: 420px; height: 400px;
+  background: #003DA5;
+  opacity: .06;
+  border-radius: 58% 42% 35% 65% / 48% 56% 44% 52%;
+  transform: rotate(18deg);
+}
+
+/* Extra absolute in-scroll blobs for an even spread */
+.gb-8, .gb-9, .gb-10, .gb-11, .gb-12 {
+  position: absolute;
+  pointer-events: none;
+}
+.gb-8 {
+  top: 500px; right: 40%;
+  width: 260px; height: 240px;
+  background: #FFC52B;
+  opacity: .12;
+  border-radius: 50% 50% 60% 40% / 50% 50% 45% 55%;
+  transform: rotate(-6deg);
+}
+.gb-9 {
+  top: 1400px; left: 45%;
+  width: 240px; height: 230px;
+  background: #003DA5;
+  opacity: .05;
+  border-radius: 55% 45% 50% 50% / 48% 52% 48% 52%;
+  transform: rotate(12deg);
+}
+.gb-10 {
+  top: 2250px; right: 30%;
+  width: 280px; height: 250px;
+  background: #FFC52B;
+  opacity: .10;
+  border-radius: 48% 52% 60% 40% / 52% 48% 52% 48%;
+  transform: rotate(-16deg);
+}
+.gb-11 {
+  top: 3200px; left: 25%;
+  width: 260px; height: 240px;
+  background: #FFC52B;
+  opacity: .11;
+  border-radius: 52% 48% 40% 60% / 48% 52% 48% 52%;
+  transform: rotate(8deg);
+}
+.gb-12 {
+  top: 4400px; right: 35%;
+  width: 240px; height: 220px;
+  background: #003DA5;
+  opacity: .05;
+  border-radius: 45% 55% 58% 42% / 52% 48% 52% 48%;
+  transform: rotate(-10deg);
+}
+@media (max-width: 800px) {
+  .gb-8, .gb-9, .gb-10, .gb-11, .gb-12 { display: none; }  /* mobile gets fixed blobs only */
+  .gbf-1 { width: 320px; height: 300px; opacity: .18; }
+  .gbf-2 { width: 280px; height: 260px; }
+}
+
+/* ── Ensure page-level blob wrappers are visible behind content ── */
+.global-blobs { z-index: 0; }
+
+/* ── Overall section padding — slightly taller so the whole page breathes ── */
+.features, .use-cases, .how-it-works, .requirements,
+.service-area, .faq { padding: 120px 0 !important; }
+@media (max-width: 700px) {
+  .features, .use-cases, .testimonials, .how-it-works, .requirements,
+  .service-area, .faq { padding: 80px 0 !important; }
+  .testimonials { margin-top: 24px; padding-top: 88px !important; }
 }
