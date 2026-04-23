@@ -286,7 +286,7 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   border-bottom: 1px solid #e5e5e5;
 }
 .mobile-menu-logo img {
-  height: 24px;
+  height: 48px;
   width: auto;
 }
 .mobile-menu-close {
@@ -2267,9 +2267,9 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   .container { padding: 0 16px; }
   .top-banner { padding: 8px 16px; font-size: .78rem; }
 
-  .header-inner { height: 60px; }
-  .logo img { height: 20px; }
-  .mobile-menu-logo img { height: 20px; }
+  .header-inner { height: auto; min-height: 72px; }
+  .site-header .logo img { height: 54px; }
+  .mobile-menu-logo img { height: 42px; }
 
   .social-proof { padding: 48px 0; }
   .social-proof .section-heading { margin-bottom: 32px; }
@@ -2435,8 +2435,8 @@ input { font-family: inherit; font-size: 16px; /* prevents iOS zoom on focus */ 
   box-shadow: var(--cer-shadow-sm);
   border-bottom: 1px solid var(--cer-border);
 }
-.site-header .header-inner { padding: 14px 0; }
-.site-header .logo img { height: 52px; width: auto; }
+.site-header .header-inner { padding: 14px 0; min-height: 88px; }
+.site-header .logo img { height: 68px; width: auto; }
 
 /* Nav links — dark ink, yellow underline accent on hover */
 .nav-item > a {
@@ -2953,8 +2953,20 @@ table tr:nth-child(even) td { background: var(--cer-bg) !important; }
 
 .pre-footer .container { position: relative; z-index: 1; }
 .pre-footer h2 { font-size: clamp(2rem, 3.5vw, 2.8rem) !important; }
-.pre-footer .btn-apply { background: var(--cer-yellow) !important; color: var(--cer-blue-dark) !important; border-color: var(--cer-yellow) !important; }
-.pre-footer .btn-apply:hover { background: #FFFFFF !important; color: var(--cer-blue-dark) !important; border-color: #FFFFFF !important; }
+.pre-footer .btn-apply,
+.pre-footer .btn-apply.btn-lg {
+  background: #FFFFFF !important;
+  color: var(--cer-blue-deep) !important;
+  border: 3px solid #FFFFFF !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,.28), 0 0 0 4px rgba(255,197,43,.35) !important;
+}
+.pre-footer .btn-apply:hover,
+.pre-footer .btn-apply.btn-lg:hover {
+  background: var(--cer-yellow) !important;
+  color: var(--cer-blue-deep) !important;
+  border-color: var(--cer-yellow) !important;
+  box-shadow: 0 14px 36px rgba(255,197,43,.55), 0 0 0 4px rgba(255,255,255,.35) !important;
+}
 
 /* ── FOOTER: navy ── */
 .site-footer {

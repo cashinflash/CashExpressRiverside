@@ -17,18 +17,53 @@
 <body>
 <header class="site-header" id="site-header">
   <div class="header-inner container">
-    <a href="/" class="logo"><img src="/images/logo.svg" alt="Cash Express Riverside" width="250" height="60" fetchpriority="high"></a>
+    <a href="/" class="logo">
+      <img src="/images/logo.svg" alt="Cash Express Riverside" width="250" height="60" fetchpriority="high">
+    </a>
+
     <nav class="main-nav" id="main-nav">
       <ul class="nav-list">
-        <li class="nav-item"><a href="/">Payday Loans</a></li>
-        <li class="nav-item"><a href="/rates-and-fees/" aria-current="page">Rates &amp; Fees</a></li>
-        <li class="nav-item"><a href="/#faq-section">FAQ</a></li>
-      </ul>
+          <li class="nav-item"><a href="/">Payday Loans</a></li>
+          <li class="nav-item"><a href="/rates-and-fees/" aria-current="page">Rates &amp; Fees</a></li>
+          <li class="nav-item"><a href="/#faq-section">FAQ</a></li>
+          <li class="nav-item"><a href="/contact/">Contact</a></li>
+        </ul>
     </nav>
+
     <div class="header-actions">
       <a href="https://apply.cashexpressriverside.com/?source_site=cashexpress_riverside&amp;utm_source=cashexpressriverside.com&amp;utm_medium=referral&amp;utm_campaign=payday_riverside" class="btn-apply">Apply Now</a>
     </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <a href="/" class="mobile-menu-logo">
+          <img src="/images/logo.svg" alt="Cash Express Riverside" width="180" height="44">
+        </a>
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item"><a href="/">Payday Loans</a></li>
+        <li class="mobile-nav-item"><a href="/rates-and-fees/" aria-current="page">Rates &amp; Fees</a></li>
+        <li class="mobile-nav-item"><a href="/#faq-section">FAQ</a></li>
+        <li class="mobile-nav-item"><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-extra">
+        <div class="mobile-btn-row">
+          <a href="https://apply.cashexpressriverside.com/?source_site=cashexpress_riverside&amp;utm_source=cashexpressriverside.com&amp;utm_medium=referral&amp;utm_campaign=payday_riverside" class="btn-apply">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
 </header>
 <main id="main-content">
 <section class="page-hero" style="padding:60px 0 40px">
@@ -100,5 +135,7 @@
     </div>
   </div>
 </footer>
+<script src="/js/main.js" defer></script>
+<script src="/js/analytics.js" defer></script>
 </body>
 </html>

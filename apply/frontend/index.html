@@ -45,12 +45,13 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 14px 24px;
+  min-height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
-.cer-logo img { height: 48px; width: auto; display: block; }
+.cer-logo img { height: 68px; width: auto; display: block; }
 .cer-nav { display: flex; gap: 4px; }
 .cer-nav a {
   color: #0F172A;
@@ -100,6 +101,8 @@
   .cer-nav { display: none; }
   .cer-menu-toggle { display: block; }
   .cer-cta { padding: 10px 18px; font-size: 14px; }
+  .cer-header-inner { min-height: 72px; padding: 10px 20px; }
+  .cer-logo img { height: 54px; }
 }
 .cer-mobile-menu {
   display: none;
@@ -147,7 +150,7 @@
 <header class="cer-header">
   <div class="cer-header-inner">
     <a href="https://cashexpressriverside.com/" class="cer-logo" aria-label="Cash Express Riverside home">
-      <img src="/logo.svg" alt="Cash Express Riverside" width="200" height="48" />
+      <img src="/logo.svg" alt="Cash Express Riverside" width="250" height="60" />
     </a>
     <nav class="cer-nav" aria-label="Main">
       <a href="https://cashexpressriverside.com/">Payday Loans</a>
@@ -162,7 +165,7 @@
   </div>
   <div class="cer-mobile-menu" id="cer-mobile-menu">
     <div class="cer-mobile-head">
-      <a href="https://cashexpressriverside.com/" class="cer-logo"><img src="/logo.svg" alt="Cash Express Riverside" width="180" height="43" /></a>
+      <a href="https://cashexpressriverside.com/" class="cer-logo"><img src="/logo.svg" alt="Cash Express Riverside" width="180" height="44" /></a>
       <button class="cer-close" aria-label="Close menu" onclick="document.getElementById('cer-mobile-menu').classList.remove('open')">&times;</button>
     </div>
     <nav class="cer-mobile-nav" aria-label="Mobile">
