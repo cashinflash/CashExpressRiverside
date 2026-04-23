@@ -3674,3 +3674,274 @@ body {
   font-size: clamp(2.2rem, 4.5vw, 3.4rem) !important;
   letter-spacing: -.025em !important;
 }
+
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v8 — real fintech punch
+   Bigger display type, high-contrast navy block, wavy dividers, massive
+   stat callouts, louder buttons, proper breathing room between sections.
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. TYPOGRAPHY — push display type further ── */
+.page-hero .hero-content h1 {
+  font-size: clamp(3rem, 7vw, 5.8rem) !important;
+  line-height: .95 !important;
+  letter-spacing: -.04em !important;
+  font-weight: 900 !important;  /* crank the weight */
+}
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3.2rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -.025em !important;
+  font-weight: 900 !important;
+}
+
+/* ── 2. SPACING — fix the "touching section above" bug ── */
+.trust-strip {
+  margin-top: 0 !important;
+  padding: 36px 0 !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  background: #FFFFFF !important;
+  position: relative;
+  z-index: 3;
+}
+.trust-strip + section,
+.trust-strip ~ section { margin-top: 0 !important; }
+
+/* Give EVERY major section generous top breathing room */
+.features, .use-cases, .testimonials, .how-it-works,
+.requirements, .service-area, .faq {
+  padding-top: 110px !important;
+  padding-bottom: 110px !important;
+}
+/* Explicit space above the testimonial section heading */
+.testimonials .section-heading { margin-top: 0 !important; padding-top: 0 !important; }
+.testimonials .container { padding-top: 8px; }
+
+/* ── 3. BIG STATS STRIP — chunky display numbers under the hero ── */
+.big-stats {
+  background: #FFFFFF;
+  padding: 50px 0 70px !important;
+  position: relative;
+  z-index: 2;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 24px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 40px;
+  background: linear-gradient(135deg, #FFFAE8 0%, #FFFFFF 50%, #F5F8FF 100%);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0,61,165,.12), 0 2px 8px rgba(0,0,0,.04);
+  border: 1px solid rgba(255,197,43,.35);
+}
+.stat-block { text-align: center; }
+.stat-num {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 900;
+  color: #003DA5;
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #003DA5 0%, #14377C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-lbl {
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+.stat-divider {
+  width: 1px;
+  height: 54px;
+  background: linear-gradient(180deg, transparent, #E6EAF0, transparent);
+  justify-self: center;
+}
+@media (max-width: 720px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 28px 24px;
+  }
+  .stat-divider {
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E6EAF0, transparent);
+  }
+}
+
+/* ── 4. FEATURES AS A NAVY HERO BLOCK — high-contrast punch ── */
+.features.features-navy {
+  background: linear-gradient(135deg, #0A2560 0%, #14377C 100%) !important;
+  color: #FFFFFF;
+  padding: 120px 0 !important;
+  position: relative;
+  overflow: hidden;
+}
+.features.features-navy::before, .features.features-navy::after {
+  /* Override earlier blob rules so navy section gets its own decoration */
+  width: 0 !important; height: 0 !important; opacity: 0 !important;
+}
+/* Yellow glow accent inside the navy block */
+.features.features-navy .features-content::before {
+  content: "";
+  position: absolute;
+  top: -100px; right: -80px;
+  width: 340px; height: 340px;
+  background: radial-gradient(closest-side, rgba(255,197,43,.30), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.features.features-navy .section-heading { color: #FFFFFF !important; }
+.features.features-navy .section-heading .underline-accent {
+  background-image: linear-gradient(transparent 62%, rgba(255,197,43,.60) 62%) !important;
+  color: #FFC52B;
+}
+.features.features-navy > .container > .features-grid > .features-content > p {
+  color: #C9D6EC !important;
+  font-size: 1.12rem !important;
+}
+.features.features-navy .feature-card {
+  background: rgba(255,255,255,.05) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  backdrop-filter: blur(4px);
+  border-left-color: #FFC52B !important;
+}
+.features.features-navy .feature-card h3 { color: #FFFFFF !important; }
+.features.features-navy .feature-card p { color: #C9D6EC !important; }
+.features.features-navy .feature-card:hover {
+  background: rgba(255,255,255,.08) !important;
+  border-color: rgba(255,255,255,.20) !important;
+  box-shadow: 0 18px 40px rgba(0,0,0,.30) !important;
+}
+.features.features-navy .btn-apply {
+  box-shadow: 0 14px 34px rgba(255,197,43,.55) !important;
+}
+.features.features-navy .features-link {
+  color: #FFC52B !important;
+}
+/* Make the phone illustration pop more against navy */
+.features.features-navy .features-image-v2 svg circle[fill="#FFF8E1"] { fill: rgba(255,197,43,.10) !important; }
+.features.features-navy .features-image-v2 svg circle[fill="#F5E1AC"] { fill: rgba(255,197,43,.18) !important; }
+
+/* ── 5. WAVE DIVIDERS — transition into/out of the navy block ── */
+.wave-divider {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  margin: 0;
+  background: #FFFFFF;
+}
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 90px;
+}
+.wave-divider.wave-down { background: #FFFFFF; }
+.wave-divider.wave-down svg path { fill: #0A2560; }
+.wave-divider.wave-up { background: #FFFFFF; }
+.wave-divider.wave-up svg path { fill: #0A2560; }
+@media (max-width: 600px) {
+  .wave-divider svg { height: 60px; }
+}
+
+/* ── 6. BUTTONS — louder glow, deeper lift ── */
+.btn-apply, .btn-apply.btn-lg {
+  box-shadow: 0 10px 28px rgba(255,197,43,.50) !important;
+  padding: 15px 36px !important;
+  font-size: 16px !important;
+}
+.btn-apply.btn-lg {
+  padding: 19px 44px !important;
+  font-size: 19px !important;
+  box-shadow: 0 18px 44px rgba(255,197,43,.55) !important;
+}
+.btn-apply:hover, .btn-apply.btn-lg:hover {
+  box-shadow: 0 20px 48px rgba(224,168,0,.65) !important;
+  transform: translateY(-3px);
+}
+/* subtle shimmer on hero CTA */
+.hero-cta .btn-apply {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── 7. HERO polish: bigger, more generous ── */
+.page-hero {
+  padding: 100px 0 100px !important;
+}
+.page-hero .hero-subtitle {
+  font-size: 1.22rem !important;
+  line-height: 1.5 !important;
+}
+.page-hero .hero-grid { gap: 72px !important; }
+.loan-calc {
+  border-radius: 32px !important;
+  padding: 40px !important;
+  box-shadow: 0 28px 72px rgba(0,61,165,.14), 0 2px 8px rgba(0,0,0,.04) !important;
+}
+.calc-amount {
+  font-size: 3.6rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -.04em;
+  background: linear-gradient(135deg, #003DA5, #14377C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── 8. USE CASES — chunkier cards ── */
+.use-cases { padding: 110px 0 !important; }
+.use-case-card {
+  padding: 36px 24px !important;
+  border-radius: 24px !important;
+}
+.use-case-card .use-case-icon svg {
+  max-width: 64px !important;
+  height: 64px !important;
+}
+.use-case-card h3 {
+  font-size: 1.08rem !important;
+  font-weight: 800 !important;
+  margin-top: 4px !important;
+}
+
+/* ── 9. TESTIMONIALS — softer, warmer ── */
+.testimonials { padding: 110px 0 !important; }
+.testimonials .section-heading { margin-bottom: 14px !important; }
+.testimonials > .container > p { margin-bottom: 56px !important; }
+.tm-card {
+  padding: 32px 28px !important;
+  border-radius: 28px !important;
+}
+
+/* ── 10. PRE-FOOTER — bigger dramatic CTA ── */
+.pre-footer { padding: 110px 0 !important; }
+.pre-footer h2 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: -.03em !important;
+}
+
+/* ── 11. FAQ — tighter border radius consistency ── */
+.faq-item { border-radius: 20px !important; }
+
+/* ── 12. Mobile spacing tighter but still breathing ── */
+@media (max-width: 700px) {
+  .features, .use-cases, .testimonials, .how-it-works,
+  .requirements, .service-area, .faq,
+  .pre-footer { padding-top: 72px !important; padding-bottom: 72px !important; }
+  .big-stats { padding: 36px 16px 48px !important; }
+  .stats-grid { padding: 24px 20px; border-radius: 22px; }
+  .page-hero { padding: 72px 0 80px !important; }
+  .features.features-navy { padding: 84px 0 !important; }
+}
