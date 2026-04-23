@@ -4746,3 +4746,80 @@ section.pre-footer a.btn-apply.btn-lg:hover {
     0 22px 52px rgba(0,0,0,.35) !important;
   transform: translateY(-3px);
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v16 — match apply-page blob visibility across marketing
+   · Remove per-section solid backgrounds (they were blocking the blobs)
+   · Body stays white. Blobs show through every section consistently.
+   · Readability preserved via card-on-white treatment inside each section.
+   · Pre-footer keeps its navy gradient (it's the brand CTA contrast block).
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* Global body stays white so fixed blobs render against a clean sheet */
+body { background: #FFFFFF !important; }
+
+/* Make every section transparent so the blob field is visible site-wide */
+.page-hero,
+.trust-strip, .trust-strip-v2,
+.big-stats,
+.features,
+.use-cases,
+.testimonials,
+.how-it-works,
+.requirements,
+.service-area,
+.faq {
+  background: transparent !important;
+}
+
+/* Remove the section-level decorative overlays that were tinting the
+   pale-cream wash (redundant now that blobs carry the color) */
+.features::before, .features::after,
+.use-cases::before, .use-cases::after,
+.testimonials::before, .testimonials::after,
+.service-area::before, .service-area::after,
+.faq::before, .faq::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Push content above the blob field */
+.page-hero, .trust-strip-v2, .big-stats, .features, .use-cases,
+.testimonials, .how-it-works, .requirements, .service-area, .faq,
+.pre-footer { position: relative; z-index: 1; }
+
+/* Cards get a solid white surface with soft shadow for readability
+   against the now-blob-visible background */
+.feature-card, .use-case-card, .tm-card, .step-card, .faq-item,
+.contact-card {
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 6px rgba(15,23,42,.04), 0 12px 32px rgba(0,61,165,.06) !important;
+}
+
+/* Hero calculator card — crisper now that it sits on a blob-visible surface */
+.loan-calc {
+  background: #FFFFFF !important;
+  box-shadow: 0 28px 72px rgba(0,61,165,.16), 0 2px 8px rgba(0,0,0,.04) !important;
+}
+
+/* FAQ contact card keeps its navy gradient (contrast element) */
+.faq-contact-card {
+  background: linear-gradient(135deg, #003DA5, #14377C) !important;
+}
+
+/* Thin divider between sections (subtle breathing line) instead of
+   color-change rhythm — keeps the page from feeling like one giant scroll */
+.features + section,
+.use-cases + section,
+.testimonials + section,
+.how-it-works + section,
+.requirements + section,
+.service-area + section,
+.faq + section { border-top: 1px solid rgba(15,23,42,.04); }
+
+/* Testimonials + FAQ spacing kept generous */
+.testimonials { padding-top: 160px !important; }
+.faq { padding-top: 140px !important; }
+
+/* Make sure blobs are visible, not hidden by any stale z-index */
+.ce-blob-field { z-index: -1 !important; }
