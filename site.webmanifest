@@ -1,0 +1,12 @@
+{
+  "name": "Cash Express Riverside",
+  "short_name": "Cash Express Riverside",
+  "description": "Same-day payday loans in Riverside, California. Licensed CDFPI lender (Dhan Corporation).",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1E3A5F",
+  "icons": [
+    { "src": "/images/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
