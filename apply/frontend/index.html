@@ -12,73 +12,167 @@
 </head>
 <body>
 <!-- Background blobs — fixed to viewport, spread across screen -->
-<div class="blob-bg blob-bg-1" aria-hidden="true"></div>
-<div class="blob-bg blob-bg-2" aria-hidden="true"></div>
-<div class="blob-bg blob-bg-3" aria-hidden="true"></div>
-<div class="blob-bg blob-bg-4" aria-hidden="true"></div>
-<div class="blob-bg blob-bg-5" aria-hidden="true"></div>
-<div class="blob-bg blob-bg-6" aria-hidden="true"></div>
+<style>
+/* Port of the marketing-site header so apply.cashexpressriverside.com visually
+   matches cashexpressriverside.com. Self-contained so it doesn't depend on the
+   marketing CSS file (different origin). */
+.cer-topbanner {
+  background: #003DA5;
+  color: #FFFFFF;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 3px solid #FFC52B;
+  text-align: center;
+  font-family: 'Poppins','Helvetica Neue',Arial,sans-serif;
+}
+.cer-topbanner .cer-banner-desktop { display: block; }
+.cer-topbanner .cer-banner-mobile { display: none; }
+@media (max-width: 600px) {
+  .cer-topbanner .cer-banner-desktop { display: none; }
+  .cer-topbanner .cer-banner-mobile { display: block; }
+}
+.cer-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E6EAF0;
+  box-shadow: 0 1px 2px rgba(15,23,42,.04);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  font-family: 'Poppins','Helvetica Neue',Arial,sans-serif;
+}
+.cer-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.cer-logo img { height: 48px; width: auto; display: block; }
+.cer-nav { display: flex; gap: 4px; }
+.cer-nav a {
+  color: #0F172A;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease;
+}
+.cer-nav a:hover { background: #EFF3FC; color: #003DA5; }
+.cer-cta {
+  background: #FFC52B;
+  color: #14377C;
+  font-weight: 800;
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: 0 6px 16px rgba(255,197,43,.40);
+  transition: background-color .15s ease, transform .12s ease, box-shadow .15s ease;
+  white-space: nowrap;
+}
+.cer-cta:hover {
+  background: #E0A800;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(224,168,0,.45);
+}
+.cer-menu-toggle {
+  display: none;
+  width: 40px; height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.cer-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background: #0F172A;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: transform .2s ease;
+}
+@media (max-width: 860px) {
+  .cer-nav { display: none; }
+  .cer-menu-toggle { display: block; }
+  .cer-cta { padding: 10px 18px; font-size: 14px; }
+}
+.cer-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #FFFFFF;
+  z-index: 100;
+  padding: 24px;
+  flex-direction: column;
+  font-family: 'Poppins','Helvetica Neue',Arial,sans-serif;
+}
+.cer-mobile-menu.open { display: flex; }
+.cer-mobile-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.cer-mobile-nav a {
+  display: block;
+  padding: 14px 0;
+  color: #0F172A;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid #E6EAF0;
+}
+.cer-mobile-nav a:hover { color: #003DA5; }
+.cer-mobile-menu .cer-cta {
+  margin-top: 28px;
+  text-align: center;
+  display: block;
+}
+.cer-close {
+  background: transparent; border: none; cursor: pointer; padding: 8px;
+  font-size: 28px; color: #0F172A; line-height: 1;
+}
+</style>
 
-<!-- SITE HEADER (matches cif-website) -->
-<header class="site-header">
-  <div class="header-inner">
-    <a href="https://cashexpressriverside.com" class="logo">
-      <img src="/logo.svg" alt="Cash Express Riverside" width="160" height="21">
+<div class="cer-topbanner">
+  <div class="cer-banner-desktop">Now serving Riverside, Moreno Valley, Corona, and the wider Inland Empire with same-day payday loans from $100 to $255.</div>
+  <div class="cer-banner-mobile">Same-day payday loans in Riverside</div>
+</div>
+
+<header class="cer-header">
+  <div class="cer-header-inner">
+    <a href="https://cashexpressriverside.com/" class="cer-logo" aria-label="Cash Express Riverside home">
+      <img src="/logo.svg" alt="Cash Express Riverside" width="200" height="48" />
     </a>
-
-    <nav class="main-nav">
-      <ul class="nav-list">
-      </ul>
+    <nav class="cer-nav" aria-label="Main">
+      <a href="https://cashexpressriverside.com/">Payday Loans</a>
+      <a href="https://cashexpressriverside.com/rates-and-fees/">Rates &amp; Fees</a>
+      <a href="https://cashexpressriverside.com/#faq-section">FAQ</a>
+      <a href="https://cashexpressriverside.com/contact/">Contact</a>
     </nav>
-
-    <div class="header-actions">
-      <a href="https://cashexpressriverside.com/locations/" class="btn-store">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Find a Store
-      </a>
-      <a href="https://cashexpressriverside.com" class="btn-login">Home</a>
-    </div>
-
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+    <a href="https://apply.cashexpressriverside.com/?source_site=cashexpress_riverside&amp;utm_source=cashexpressriverside.com&amp;utm_medium=referral&amp;utm_campaign=payday_riverside" class="cer-cta">Apply Now</a>
+    <button class="cer-menu-toggle" id="cer-menu-toggle" aria-label="Open menu" onclick="document.getElementById('cer-mobile-menu').classList.add('open')">
       <span></span><span></span><span></span>
     </button>
   </div>
-
-  <!-- Mobile Menu Drawer -->
-  <div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu-hd">
-      <a href="https://cashexpressriverside.com" class="logo">
-        <img src="/logo.svg" alt="Cash Express Riverside" width="140" height="19">
-      </a>
-      <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Close menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
+  <div class="cer-mobile-menu" id="cer-mobile-menu">
+    <div class="cer-mobile-head">
+      <a href="https://cashexpressriverside.com/" class="cer-logo"><img src="/logo.svg" alt="Cash Express Riverside" width="180" height="43" /></a>
+      <button class="cer-close" aria-label="Close menu" onclick="document.getElementById('cer-mobile-menu').classList.remove('open')">&times;</button>
     </div>
-    <div class="mobile-menu-inner">
-      <ul class="mobile-nav-list">
-        <li class="mobile-nav-item has-sub">
-          <a href="#">Loans</a>
-          <ul class="mobile-sub">
-            <li><a href="https://cashexpressriverside.com/loans/payday-loans/">Payday Loans</a></li>
-            <li><a href="https://cashexpressriverside.com/loans/cash-advance/">Cash Advances</a></li>
-          </ul>
-        </li>
-        <li class="mobile-nav-item"><a href="https://cashexpressriverside.com/services/western-union/">Western Union</a></li>
-        <li class="mobile-nav-item"><a href="https://cashexpressriverside.com/money-tips/">Money Tips</a></li>
-      </ul>
-      <div class="mobile-menu-extra">
-        <a href="https://cashexpressriverside.com/locations/" class="mobile-store-link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Find a Store
-        </a>
-        <div class="mobile-btn-row">
-          <a href="/" class="btn-apply">Apply Now</a>
-          
-        </div>
-      </div>
-    </div>
+    <nav class="cer-mobile-nav" aria-label="Mobile">
+      <a href="https://cashexpressriverside.com/">Payday Loans</a>
+      <a href="https://cashexpressriverside.com/rates-and-fees/">Rates &amp; Fees</a>
+      <a href="https://cashexpressriverside.com/#faq-section">FAQ</a>
+      <a href="https://cashexpressriverside.com/contact/">Contact</a>
+    </nav>
+    <a href="https://apply.cashexpressriverside.com/?source_site=cashexpress_riverside&amp;utm_source=cashexpressriverside.com&amp;utm_medium=referral&amp;utm_campaign=payday_riverside" class="cer-cta">Apply Now</a>
   </div>
-  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
 </header>
 
 
