@@ -115,7 +115,7 @@ async function doPlaid(){
       onSuccess:async(pt,meta)=>{
         st.className='plaid-st ok';st.textContent='Connecting...';st.style.display='flex';
         try{
-          const ex=await fetch(API_BASE+'/plaid/exchange',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({public_token:pt})};
+          const ex=await fetch(API_BASE+'/plaid/exchange',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({public_token:pt})});
           const ed=await ex.json();assetTok=ed.asset_report_token;window._plaidAccessToken=ed.access_token||'';plaidOk=true;
           btn.classList.remove('loading');btn.classList.add('connected');
           document.getElementById('plaid-btxt').textContent='✓ Bank Connected!';
