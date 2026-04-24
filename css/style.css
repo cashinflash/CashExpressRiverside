@@ -3278,7 +3278,7 @@ body {
 }
 
 /* ── Features section: cleaner 2-col, bigger rounded cards ── */
-.features-grid { gap: 88px !important; }
+.features-grid { gap: 48px !important; }
 .features-content .section-heading {
   font-size: clamp(2rem, 3.6vw, 2.8rem) !important;
   letter-spacing: -.02em !important;
@@ -5210,4 +5210,38 @@ h1, h2, h3, h4, h5, h6 {
   .testimonials { padding-top: 40px !important; margin-top: 0 !important; }
   .page-hero .hero-grid { gap: 28px !important; }
   .section-heading { margin-bottom: 16px !important; }
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v25 — kill the big visual gap under the calculator on mobile.
+   Root cause: .features-grid gap:88px (overrode every mobile rule),
+   plus the decorative 344-px-tall phone SVG inside .features-image-v2
+   stacked above the heading. Both amount to ~400px of empty-feeling
+   space on a phone.
+   · .features-grid gap globally dropped 88 → 48 desktop.
+   · On ≤700px the phone illustration and similar decorative SVGs
+     are hidden (aria-hidden="true" already, so no content loss).
+   · Mobile grid gaps tightened everywhere.
+   ═════════════════════════════════════════════════════════════════════ */
+@media (max-width: 700px) {
+  /* Hide purely decorative phone / screenshot illustrations — they
+     were eating ~300px on mobile each and added nothing the heading
+     and copy don't already convey. */
+  .features-image,
+  .features-image-v2,
+  .features-image-wrap,
+  .features-composite { display: none !important; }
+
+  /* Tighten mobile grid gaps so stacked sections sit closer */
+  .features-grid,
+  .hero-grid,
+  .how-it-works-grid,
+  .faq-grid,
+  .use-cases-grid,
+  .contact-grid { gap: 24px !important; }
+
+  /* Any lingering space under the hero content before the next
+     section (belt-and-braces) */
+  .page-hero { padding-bottom: 16px !important; }
+  .features  { padding-top: 24px !important; }
 }
