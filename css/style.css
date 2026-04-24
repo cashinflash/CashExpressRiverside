@@ -5300,3 +5300,71 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 !important;
   }
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v28 — un-bleed mobile-centric rules on desktop.
+   Earlier .hero-checks centering + polish v23 .hero-cta centering
+   were applied WITHOUT a @media guard, so they made the hero on
+   desktop look like a mobile layout (narrow centered CTA column,
+   centered check rows). Restore the original left-aligned row
+   layout for ≥769px — mobile keeps the stacked + centered look.
+   ═════════════════════════════════════════════════════════════════════ */
+@media (min-width: 769px) {
+  /* Hero check rows: column list but items left-aligned, not centered */
+  .hero-checks {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: auto !important;
+  }
+  .hero-checks li {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  /* Hero CTA: back to a horizontal row — Apply Now + "Questions?" link
+     side by side, left-aligned inside the hero-content column. */
+  .hero-cta {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: auto !important;
+  }
+  .hero-cta .btn-apply,
+  .hero-cta .btn-apply.btn-lg { align-self: auto !important; }
+  .hero-cta .hero-link {
+    text-align: left !important;
+    align-self: center !important;
+  }
+
+  /* Hero content column should read left-aligned on desktop, not
+     center-aligned (mobile-only text-align:center is set earlier at
+     max-width:768 so this is belt-and-braces). */
+  .page-hero .hero-content,
+  .page-hero .hero-content h1,
+  .page-hero .hero-content .hero-subtitle {
+    text-align: left !important;
+  }
+  .page-hero .hero-content .hero-subtitle {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Section rhythm on desktop was 56/56 (polish v24) — a touch tight
+     for the wide viewport. Bump to 80/80 so sections breathe without
+     reopening the old 140-px gaps. Mobile (≤700) stays at 40/40. */
+  .page-hero      { padding: 72px 0 48px !important; }
+  .features,
+  .use-cases,
+  .testimonials,
+  .how-it-works,
+  .requirements,
+  .service-area,
+  .faq            { padding: 80px 0 !important; }
+  .pre-footer     { padding: 96px 0 !important; }
+  .testimonials   { padding-top: 80px !important; }
+}
