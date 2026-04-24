@@ -7,7 +7,9 @@
 <link rel="shortcut icon" href="https://cashexpressriverside.com/images/favicon.png">
 <link rel="apple-touch-icon" href="https://cashexpressriverside.com/images/favicon.png">
 <title>Payday Loan Application | Cash Express Riverside</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,48 +27,80 @@
   <div class="ce-blob b-small b-navy   b-10"></div>
 </div>
 
-<!-- Background blobs — fixed to viewport, spread across screen -->
+<!-- ═══════════════════════════════════════════════════════════════════
+     Header ported verbatim from cashexpressriverside.com so the apply
+     page matches the marketing site pixel-for-pixel. Self-contained
+     (inline CSS) because apply.cashexpressriverside.com is a different
+     origin and can't share /css/style.css.
+     ═══════════════════════════════════════════════════════════════════ -->
 <style>
-/* Port of the marketing-site header so apply.cashexpressriverside.com visually
-   matches cashexpressriverside.com. Self-contained so it doesn't depend on the
-   marketing CSS file (different origin). */
-.cer-topbanner {
+/* Font baseline — Inter to match the marketing site */
+body, .top-banner, .site-header, .site-header *, .btn-apply, .nav-item > a {
+  font-family: 'Inter','Poppins','Helvetica Neue',Arial,sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+/* TOP BANNER */
+.top-banner {
   background: #003DA5;
   color: #FFFFFF;
+  border-bottom: 3px solid #FFC52B;
+  text-align: center;
   padding: 10px 0;
   font-weight: 600;
   font-size: 14px;
-  border-bottom: 3px solid #FFC52B;
-  text-align: center;
-  font-family: 'Poppins','Helvetica Neue',Arial,sans-serif;
 }
-.cer-topbanner .cer-banner-desktop { display: block; }
-.cer-topbanner .cer-banner-mobile { display: none; }
+.top-banner .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.top-banner p { margin: 0; }
+.top-banner .banner-desktop { display: block; }
+.top-banner .banner-mobile  { display: none; }
 @media (max-width: 600px) {
-  .cer-topbanner .cer-banner-desktop { display: none; }
-  .cer-topbanner .cer-banner-mobile { display: block; }
+  .top-banner .banner-desktop { display: none; }
+  .top-banner .banner-mobile  { display: block; }
+  .top-banner { font-size: 13px; }
 }
-.cer-header {
-  background: #FFFFFF;
-  border-bottom: 1px solid #E6EAF0;
-  box-shadow: 0 1px 2px rgba(15,23,42,.04);
+
+/* SITE HEADER — sticky white bar, soft shadow */
+.site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  font-family: 'Poppins','Helvetica Neue',Arial,sans-serif;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E6EAF0;
+  box-shadow: 0 1px 2px rgba(15,23,42,.04);
 }
-.cer-header-inner {
+.site-header .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 14px 24px;
+  min-height: 104px;
   gap: 20px;
 }
-.cer-logo img { height: 80px !important; width: auto !important; max-width: none !important; max-height: 80px !important; object-fit: contain; display: block; }
-.cer-nav { display: flex; gap: 4px; }
-.cer-nav a {
+
+/* LOGO */
+.site-header .logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+.site-header .logo img {
+  height: 80px;
+  max-height: 80px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+}
+
+/* DESKTOP NAV */
+.site-header .main-nav { display: block; }
+.site-header .nav-list {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-header .nav-item > a {
   color: #0F172A;
   font-weight: 600;
   font-size: 15px;
@@ -74,9 +108,15 @@
   border-radius: 8px;
   text-decoration: none;
   transition: background-color .15s ease, color .15s ease;
+  display: inline-block;
 }
-.cer-nav a:hover { background: #EFF3FC; color: #003DA5; }
-.cer-cta {
+.site-header .nav-item > a:hover { background: #EFF3FC; color: #003DA5; }
+.site-header .nav-item > a[aria-current="page"] { color: #003DA5; }
+
+/* APPLY NOW pill — yellow with navy text */
+.site-header .header-actions { display: flex; align-items: center; gap: 12px; }
+.site-header .btn-apply,
+.btn-apply {
   background: #FFC52B;
   color: #14377C;
   font-weight: 800;
@@ -84,108 +124,66 @@
   border-radius: 999px;
   text-decoration: none;
   font-size: 15px;
+  border: 2px solid #FFC52B;
   box-shadow: 0 6px 16px rgba(255,197,43,.40);
   transition: background-color .15s ease, transform .12s ease, box-shadow .15s ease;
   white-space: nowrap;
+  letter-spacing: .01em;
+  display: inline-block;
 }
-.cer-cta:hover {
+.site-header .btn-apply:hover,
+.btn-apply:hover {
   background: #E0A800;
+  border-color: #E0A800;
+  color: #14377C;
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(224,168,0,.45);
 }
-.cer-menu-toggle {
-  display: none;
-  width: 40px; height: 40px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
+
+/* MOBILE — hide nav, keep logo + Apply pill (no hamburger) */
+@media (max-width: 768px) {
+  .site-header .main-nav { display: none; }
+  .site-header .header-inner { min-height: 92px; padding: 10px 20px; }
+  .site-header .logo img { height: 68px; max-height: 68px; }
+  .site-header .btn-apply { padding: 10px 18px; font-size: 14px; }
 }
-.cer-menu-toggle span {
-  display: block;
-  width: 100%;
-  height: 2.5px;
-  background: #0F172A;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: transform .2s ease;
+@media (max-width: 500px) {
+  .site-header .header-inner { min-height: 80px; padding: 10px 16px; }
+  .site-header .logo img { height: 60px; max-height: 60px; max-width: calc(100vw - 150px); }
 }
-@media (max-width: 860px) {
-  .cer-nav { display: none; }
-  .cer-menu-toggle { display: block; }
-  .cer-cta { padding: 10px 18px; font-size: 14px; }
-}
-.cer-mobile-menu {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #FFFFFF;
-  z-index: 100;
-  padding: 24px;
-  flex-direction: column;
-  font-family: 'Poppins','Helvetica Neue',Arial,sans-serif;
-}
-.cer-mobile-menu.open { display: flex; }
-.cer-mobile-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
-}
-.cer-mobile-nav a {
-  display: block;
-  padding: 14px 0;
-  color: #0F172A;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  border-bottom: 1px solid #E6EAF0;
-}
-.cer-mobile-nav a:hover { color: #003DA5; }
-.cer-mobile-menu .cer-cta {
-  margin-top: 28px;
-  text-align: center;
-  display: block;
-}
-.cer-close {
-  background: transparent; border: none; cursor: pointer; padding: 8px;
-  font-size: 28px; color: #0F172A; line-height: 1;
+@media (max-width: 420px) {
+  .site-header .logo img { height: 56px; max-height: 56px; max-width: calc(100vw - 135px); }
+  .site-header .btn-apply { padding: 9px 14px; font-size: 13px; }
 }
 </style>
 
-<div class="cer-topbanner">
-  <div class="cer-banner-desktop">Now serving Riverside, Moreno Valley, Corona, and the wider Inland Empire with same-day payday loans from $100 to $255.</div>
-  <div class="cer-banner-mobile">Same-day payday loans in Riverside</div>
+<!-- TOP BANNER -->
+<div class="top-banner">
+  <div class="container">
+    <p class="banner-desktop">Now serving Riverside, Moreno Valley, Corona, and the wider Inland Empire with same-day payday loans from $100 to $255.</p>
+    <p class="banner-mobile">Same-day payday loans in Riverside</p>
+  </div>
 </div>
 
-<header class="cer-header">
-  <div class="cer-header-inner">
-    <a href="https://cashexpressriverside.com/" class="cer-logo" aria-label="Cash Express Riverside home">
-      <img src="https://cashexpressriverside.com/images/logo.png" alt="Cash Express Riverside" width="285" height="80" />
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="https://cashexpressriverside.com/" class="logo" aria-label="Cash Express Riverside home">
+      <img src="https://cashexpressriverside.com/images/logo.png" alt="Cash Express Riverside" width="285" height="80" fetchpriority="high">
     </a>
-    <nav class="cer-nav" aria-label="Main">
-      <a href="https://cashexpressriverside.com/">Payday Loans</a>
-      <a href="https://cashexpressriverside.com/rates-and-fees/">Rates &amp; Fees</a>
-      <a href="https://cashexpressriverside.com/#faq-section">FAQ</a>
-      <a href="https://cashexpressriverside.com/contact/">Contact</a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="https://cashexpressriverside.com/">Payday Loans</a></li>
+        <li class="nav-item"><a href="https://cashexpressriverside.com/rates-and-fees/">Rates &amp; Fees</a></li>
+        <li class="nav-item"><a href="https://cashexpressriverside.com/#faq-section">FAQ</a></li>
+        <li class="nav-item"><a href="https://cashexpressriverside.com/contact/">Contact</a></li>
+      </ul>
     </nav>
-    <a href="https://apply.cashexpressriverside.com/?source_site=cashexpress_riverside&amp;utm_source=cashexpressriverside.com&amp;utm_medium=referral&amp;utm_campaign=payday_riverside" class="cer-cta">Apply Now</a>
-    <button class="cer-menu-toggle" id="cer-menu-toggle" aria-label="Open menu" onclick="document.getElementById('cer-mobile-menu').classList.add('open')">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="cer-mobile-menu" id="cer-mobile-menu">
-    <div class="cer-mobile-head">
-      <a href="https://cashexpressriverside.com/" class="cer-logo"><img src="https://cashexpressriverside.com/images/logo.png" alt="Cash Express Riverside" width="200" height="56" /></a>
-      <button class="cer-close" aria-label="Close menu" onclick="document.getElementById('cer-mobile-menu').classList.remove('open')">&times;</button>
+
+    <div class="header-actions">
+      <a href="https://apply.cashexpressriverside.com/?source_site=cashexpress_riverside&amp;utm_source=cashexpressriverside.com&amp;utm_medium=referral&amp;utm_campaign=payday_riverside" class="btn-apply">Apply Now</a>
     </div>
-    <nav class="cer-mobile-nav" aria-label="Mobile">
-      <a href="https://cashexpressriverside.com/">Payday Loans</a>
-      <a href="https://cashexpressriverside.com/rates-and-fees/">Rates &amp; Fees</a>
-      <a href="https://cashexpressriverside.com/#faq-section">FAQ</a>
-      <a href="https://cashexpressriverside.com/contact/">Contact</a>
-    </nav>
-    <a href="https://apply.cashexpressriverside.com/?source_site=cashexpress_riverside&amp;utm_source=cashexpressriverside.com&amp;utm_medium=referral&amp;utm_campaign=payday_riverside" class="cer-cta">Apply Now</a>
   </div>
 </header>
 
