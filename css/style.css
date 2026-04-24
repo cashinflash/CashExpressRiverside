@@ -5110,3 +5110,30 @@ h1, h2, h3, h4, h5, h6 {
   }
   .site-header .header-inner { min-height: 88px !important; }
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v22 — drop the yellow swoosh / highlight under title words.
+   Kills both treatments that were in use:
+     1. `.underline-accent::after` — the painted SVG underline
+     2. `.underline-accent { background-image: linear-gradient(...) }`
+        — the yellow highlight bar behind the text
+   Title text keeps its original heading color (no more yellow span
+   either), so titles like "Payday Loans in Riverside, CA" read as
+   one continuous heading.
+   ═════════════════════════════════════════════════════════════════════ */
+.underline-accent,
+.page-hero .hero-content h1 span.underline-accent,
+.features.features-navy .section-heading .underline-accent {
+  background: none !important;
+  background-image: none !important;
+  color: inherit !important;
+  padding: 0 !important;
+}
+.underline-accent::after,
+.underline-accent::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  -webkit-mask: none !important;
+          mask: none !important;
+}
