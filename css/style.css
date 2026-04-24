@@ -5157,3 +5157,57 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center !important;
   align-self: center !important;
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v24 — spacing audit: tighter, even rhythm between every
+   section. Previous v19b was still too airy — v24 brings it down
+   another step so content flows without big gaps between blocks.
+
+   Desktop: each content section = 56px top + 56px bottom (112px
+            between any two sections).
+   Mobile : each content section = 40px top + 40px bottom (80px gap).
+
+   Also: hero-grid gap trimmed, section-heading bottom margin checked,
+   calculator no longer leaves excess air above the next section.
+   ═════════════════════════════════════════════════════════════════════ */
+.page-hero      { padding: 56px 0 40px !important; }
+.trust-strip,
+.trust-strip-v2 { padding: 32px 0 !important; }
+.big-stats      { padding: 44px 0 !important; }
+.features,
+.use-cases,
+.testimonials,
+.how-it-works,
+.requirements,
+.service-area,
+.faq            { padding: 56px 0 !important; }
+.pre-footer     { padding: 72px 0 !important; }
+.testimonials   { padding-top: 56px !important; margin-top: 0 !important; }
+
+/* Hero-grid: less air between the copy column and the calculator */
+.page-hero .hero-grid { gap: 40px !important; }
+
+/* Trim any leftover oversized bottom margins that compound section gaps */
+.hero-cta      { margin-bottom: 8px !important; }
+.hero-checks   { margin: 16px auto 22px !important; }
+.loan-calc     { margin-bottom: 0 !important; }
+.section-heading { margin-bottom: 20px !important; }
+.features-cta, .use-cases-cta, .education-cta { margin-top: 28px !important; }
+
+@media (max-width: 700px) {
+  .page-hero    { padding: 40px 0 28px !important; }
+  .trust-strip,
+  .trust-strip-v2 { padding: 22px 0 !important; }
+  .big-stats    { padding: 30px 0 !important; }
+  .features,
+  .use-cases,
+  .testimonials,
+  .how-it-works,
+  .requirements,
+  .service-area,
+  .faq          { padding: 40px 0 !important; }
+  .pre-footer   { padding: 52px 0 !important; }
+  .testimonials { padding-top: 40px !important; margin-top: 0 !important; }
+  .page-hero .hero-grid { gap: 28px !important; }
+  .section-heading { margin-bottom: 16px !important; }
+}
