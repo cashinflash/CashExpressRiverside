@@ -4877,3 +4877,135 @@ body { background: #FFFFFF !important; }
   color: #14377C !important;
   border-color: #E0A800 !important;
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v19 — switch primary font to Inter (Brigit-style),
+   bump mobile logo, breathing room for the hamburger.
+   Fonts load via Google Fonts (<link> added in each HTML head).
+   ═════════════════════════════════════════════════════════════════════ */
+html, body,
+.site-header, .cer-header,
+.btn-apply, .cer-cta,
+input, button, select, textarea {
+  font-family:
+    'Inter',
+    'Poppins',
+    -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji' !important;
+  font-feature-settings: 'cv11','ss01','ss03';
+  letter-spacing: -0.01em;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family:
+    'Inter',
+    'Poppins',
+    -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* Mobile: larger brand mark + real touch-safe gap on the hamburger */
+@media (max-width: 700px) {
+  .site-header .logo img,
+  .cer-header .cer-logo img {
+    height: 68px !important;
+    max-height: 68px !important;
+  }
+}
+@media (max-width: 500px) {
+  .site-header .logo img,
+  .cer-header .cer-logo img {
+    height: 64px !important;
+    max-height: 64px !important;
+  }
+}
+
+/* Hamburger: give it a 44x44 tap target and push it off the right edge */
+@media (max-width: 768px) {
+  .menu-toggle {
+    width: 44px !important;
+    height: 44px !important;
+    padding: 12px 8px !important;
+    margin-right: -4px; /* align the visible bars, not the tap box, to the edge */
+    box-sizing: border-box !important;
+  }
+  .menu-toggle span {
+    width: 24px !important;
+    height: 2.5px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    background: #14377C !important;
+  }
+  .menu-toggle span:nth-child(1) { top: 14px !important; }
+  .menu-toggle span:nth-child(2) { top: 21px !important; }
+  .menu-toggle span:nth-child(3) { top: 28px !important; }
+  .menu-toggle.active span:nth-child(1) { top: 21px !important; transform: translateX(-50%) rotate(45deg); }
+  .menu-toggle.active span:nth-child(3) { top: 21px !important; transform: translateX(-50%) rotate(-45deg); }
+
+  /* Widen the container a hair on phones so the hamburger has breathing
+     room but text still fills the line. */
+  .site-header > .header-inner.container { padding-left: 20px !important; padding-right: 20px !important; }
+}
+@media (max-width: 480px) {
+  .site-header > .header-inner.container { padding-left: 16px !important; padding-right: 16px !important; }
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v19b — tighter section rhythm + blobs scroll with the page
+   · Section padding was 140px top+bottom (280px gutter between adjacent
+     sections). Reduce to a 72/80 pattern so the page reads as one
+     continuous flow instead of big air pockets. Also kill the extra
+     180px testimonials top-pad that stacked on top of the 140px.
+   · Blob field becomes position:absolute (was fixed), so blobs scroll
+     with the content the way they do on cashinflash.com instead of
+     hovering against the viewport.
+   ═════════════════════════════════════════════════════════════════════ */
+.page-hero      { padding: 72px 0 64px !important; }
+.trust-strip,
+.trust-strip-v2 { padding: 40px 0 !important; }
+.big-stats      { padding: 56px 0 !important; }
+.features,
+.use-cases,
+.testimonials,
+.how-it-works,
+.requirements,
+.service-area,
+.faq            { padding: 80px 0 !important; }
+.pre-footer     { padding: 88px 0 !important; }
+
+/* Cancel the stacked testimonials top-pad override. */
+.testimonials   { padding-top: 80px !important; margin-top: 0 !important; }
+
+@media (max-width: 700px) {
+  .page-hero    { padding: 56px 0 48px !important; }
+  .trust-strip,
+  .trust-strip-v2 { padding: 28px 0 !important; }
+  .big-stats    { padding: 40px 0 !important; }
+  .features,
+  .use-cases,
+  .testimonials,
+  .how-it-works,
+  .requirements,
+  .service-area,
+  .faq          { padding: 56px 0 !important; }
+  .pre-footer   { padding: 64px 0 !important; }
+  .testimonials { padding-top: 56px !important; margin-top: 0 !important; }
+}
+
+/* Scroll-with-page blob field (like cashinflash.com), instead of
+   viewport-pinned. Body is already position:relative earlier in the
+   file, so absolute + inset:0 + height:100% spans the full document. */
+.ce-blob-field {
+  position: absolute !important;
+  inset: 0 !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+.ce-blob { position: absolute !important; }
+
+/* Kill the leftover .global-blobs-fixed / .gbf rules — those elements
+   are gone from the HTML now, but the CSS used position:fixed too. */
+.global-blobs-fixed, .gbf { display: none !important; }
