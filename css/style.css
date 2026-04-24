@@ -5260,3 +5260,41 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v27 — fix the "How To Get a Payday Loan" step cards on
+   mobile. The desktop grid (56px circle | copy) was being forced on
+   phones too (display:grid !important overrode the mobile
+   flex-direction:column rule), so the numbered circle sat in its
+   own narrow column while the centered title + paragraph floated
+   beside it — looked broken in the screenshot.
+
+   On ≤700px: stack number circle on top, then centered title, then
+   centered paragraph. Clean vertical rhythm, no orphan circle.
+   ═════════════════════════════════════════════════════════════════════ */
+@media (max-width: 700px) {
+  .step-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 14px !important;
+    padding: 24px 20px !important;
+    grid-template-columns: none !important;
+  }
+  .step-card > .step-num {
+    margin: 0 auto !important;
+  }
+  .step-card > div:not(.step-num) {
+    text-align: center !important;
+    width: 100%;
+  }
+  .step-card .step-label {
+    text-align: center !important;
+  }
+  .step-card p {
+    text-align: center !important;
+    margin: 0 !important;
+  }
+}
