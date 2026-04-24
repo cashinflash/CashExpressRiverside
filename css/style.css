@@ -5245,3 +5245,18 @@ h1, h2, h3, h4, h5, h6 {
   .page-hero { padding-bottom: 16px !important; }
   .features  { padding-top: 24px !important; }
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v26 — center the numbered legal disclosures at the very
+   bottom of the footer (†, 1., 2., 3., the credit-decision note,
+   and the copyright line).
+   ═════════════════════════════════════════════════════════════════════ */
+.site-footer .footer-legal,
+.site-footer .footer-legal p {
+  text-align: center !important;
+}
+.site-footer .footer-legal {
+  max-width: 900px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
