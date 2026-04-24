@@ -5137,3 +5137,28 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-mask: none !important;
           mask: none !important;
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v23 — center the hero CTA and stack the "Questions? Get in
+   touch." link beneath the Apply Now pill.
+   ═════════════════════════════════════════════════════════════════════ */
+.hero-cta {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: fit-content;
+}
+.hero-cta .btn-apply,
+.hero-cta .btn-apply.btn-lg {
+  align-self: center !important;
+}
+.hero-cta .hero-link {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center !important;
+  align-self: center !important;
+}
