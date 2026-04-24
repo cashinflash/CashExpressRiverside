@@ -4851,3 +4851,25 @@ body { background: #FFFFFF !important; }
 @media (max-width: 860px) {
   .site-header .header-actions .btn-apply { padding: 10px 18px !important; font-size: 14px !important; }
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v18 — mobile menu drawer: swap stray green (#1b3a2d) for navy
+   · Drawer body uses the brand navy gradient (same family as the
+     pre-footer and site-footer), header strip stays white so the logo
+     reads cleanly.
+   · Apply Now hover inside the drawer lands on yellow-dark — never green.
+   ═════════════════════════════════════════════════════════════════════ */
+.mobile-menu {
+  background: linear-gradient(180deg, #003DA5 0%, #0A2560 100%) !important;
+}
+.mobile-nav-item > a {
+  color: #FFFFFF !important;
+  border-bottom: 1px solid rgba(255,255,255,.14) !important;
+}
+.mobile-nav-item > a:hover,
+.mobile-nav-item > a[aria-current="page"] { color: #FFC52B !important; }
+.mobile-btn-row .btn-apply:hover {
+  background: #E0A800 !important;
+  color: #14377C !important;
+  border-color: #E0A800 !important;
+}
