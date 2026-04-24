@@ -5075,3 +5075,38 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 56px !important;
   }
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v21 — larger mobile brand mark (logo only; CTA untouched).
+   Uses max-width: calc(100vw - Xpx) as a safety so the logo can grow
+   as tall as there is room, but never crashes into the Apply Now pill.
+   ═════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .site-header .logo img,
+  .cer-header .cer-logo img {
+    height: 92px !important;
+    max-height: 92px !important;
+    width: auto !important;
+    max-width: calc(100vw - 180px) !important;
+    object-fit: contain !important;
+  }
+  .site-header .header-inner { min-height: 104px !important; }
+}
+@media (max-width: 500px) {
+  .site-header .logo img,
+  .cer-header .cer-logo img {
+    height: 84px !important;
+    max-height: 84px !important;
+    max-width: calc(100vw - 150px) !important;
+  }
+  .site-header .header-inner { min-height: 96px !important; }
+}
+@media (max-width: 420px) {
+  .site-header .logo img,
+  .cer-header .cer-logo img {
+    height: 76px !important;
+    max-height: 76px !important;
+    max-width: calc(100vw - 135px) !important;
+  }
+  .site-header .header-inner { min-height: 88px !important; }
+}
