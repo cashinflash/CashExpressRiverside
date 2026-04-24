@@ -5030,3 +5030,48 @@ h1, h2, h3, h4, h5, h6 {
   gap: 10px !important;
   text-align: left;
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   POLISH v20 — simplify the mobile header: logo + Apply Now only.
+   No hamburger, no slide-in drawer. Nav links still exist on desktop
+   (≥769px) as before; they just disappear on phones in favor of the
+   yellow Apply Now pill.
+   ═════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Hide the hamburger + the drawer + its overlay entirely. */
+  .menu-toggle,
+  .mobile-menu,
+  .mobile-menu-overlay { display: none !important; }
+
+  /* Bring the Apply Now button back into the header on phones.
+     (Polish v5 hid .header-actions at ≤768px so the hamburger could
+     stand in for it — now we want the button directly.) */
+  .site-header .header-actions {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Make the mobile Apply button compact but legible — stays as a
+     pill, never wraps, stays inside the container padding. */
+  .site-header .header-actions .btn-apply {
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+    min-height: 40px;
+  }
+}
+
+/* Phone-small breakpoint: shrink the CTA a touch more so the logo +
+   button always fit on one row without pushing the logo in. */
+@media (max-width: 420px) {
+  .site-header .header-actions .btn-apply {
+    padding: 9px 14px !important;
+    font-size: 13px !important;
+  }
+  .site-header .logo img,
+  .cer-header .cer-logo img {
+    height: 56px !important;
+    max-height: 56px !important;
+  }
+}
