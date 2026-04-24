@@ -3953,8 +3953,12 @@ body {
    Rhythm: section 1 white, section 2 warm-cream, repeating.
    ═════════════════════════════════════════════════════════════════════ */
 
-/* Allow body-level blobs to overflow without clipping across sections */
-html, body { overflow-x: hidden; }
+/* Allow body-level blobs to overflow without clipping across sections.
+   Use `clip` (not `hidden`) because iOS Safari can get stuck blocking
+   vertical scroll when the body is `overflow-x: hidden` and something
+   pokes outside the viewport. `clip` trims the paint without creating
+   a scroll container, so touch-scroll stays smooth on iPhone. */
+html, body { overflow-x: clip; }
 body { position: relative; }
 main { position: relative; z-index: 0; }
 
