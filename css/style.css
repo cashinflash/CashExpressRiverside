@@ -5009,3 +5009,24 @@ h1, h2, h3, h4, h5, h6 {
 /* Kill the leftover .global-blobs-fixed / .gbf rules — those elements
    are gone from the HTML now, but the CSS used position:fixed too. */
 .global-blobs-fixed, .gbf { display: none !important; }
+
+/* Center the 3 hero check-rows horizontally (icon + text together). */
+.hero-checks {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 0 !important;
+  list-style: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
+}
+.hero-checks li {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  text-align: left;
+}
