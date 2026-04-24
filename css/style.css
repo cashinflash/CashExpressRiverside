@@ -5292,6 +5292,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   .step-card .step-label {
     text-align: center !important;
+    justify-content: center !important;
+    width: 100%;
   }
   .step-card p {
     text-align: center !important;
